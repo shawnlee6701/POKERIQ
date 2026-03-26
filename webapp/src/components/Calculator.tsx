@@ -35,6 +35,7 @@ export const Calculator: React.FC<CalculatorProps> = ({ onBack }) => {
   const [isCalculating, setIsCalculating] = useState(false);
   const [hasCalculated, setHasCalculated] = useState(false);
   const [boardChanged, setBoardChanged] = useState(false);
+  const [showGuide, setShowGuide] = useState(true);
   const defaultResults = {
     win: 0, tie: 0, loss: 0, handName: '', outs: 0, outsType: '', 
     outsCards: [] as { rank: string; suit: string }[], turnHit: 0, riverHit: 0, totalHit: 0
@@ -167,8 +168,36 @@ export const Calculator: React.FC<CalculatorProps> = ({ onBack }) => {
       </header>
 
       <main className="flex-1 overflow-y-auto mt-[calc(4rem+env(safe-area-inset-top))] w-full relative">
+        <AnimatePresence>
+          {showGuide && (
+            <motion.div 
+              initial={{ opacity: 0, y: -20, height: 0 }}
+              animate={{ opacity: 1, y: 0, height: 'auto' }}
+              exit={{ opacity: 0, scale: 0.95, height: 0 }}
+              className="px-4 pt-4 relative z-20"
+            >
+              <div className="bg-primary/10 border border-primary/20 rounded-2xl p-4 flex gap-3 items-start relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/20 rounded-full blur-2xl -mr-10 -mt-10 pointer-events-none" />
+                <HelpCircle className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <div className="flex-1">
+                  <h3 className="text-primary font-bold text-sm mb-1">新手引导：胜率计算器</h3>
+                  <p className="text-white/70 text-xs leading-relaxed">
+                    在这里模拟真实牌局！点击下方卡槽添加你的**底牌**与牌桌**公共牌**，一键计算你在当前对局中的胜率、平局率及后续成牌概率，助你做出最理性的数学决策。
+                  </p>
+                </div>
+                <button 
+                  onClick={() => setShowGuide(false)}
+                  className="p-1 hover:bg-primary/20 rounded-lg transition-colors text-primary/70 hover:text-primary shrink-0"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {/* ================= THE FELT ================= */}
-        <div className="relative pt-6 pb-2 px-4 flex flex-col items-center min-h-[420px]">
+        <div className={`relative pb-2 px-4 flex flex-col items-center min-h-[420px] transition-all duration-300 ${showGuide ? 'pt-2' : 'pt-6'}`}>
           <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[120%] h-64 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
 
           {/* 公共牌 */}

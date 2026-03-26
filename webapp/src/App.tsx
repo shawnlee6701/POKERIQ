@@ -48,6 +48,7 @@ export default function App() {
   // 初始化：匿名登录
   useEffect(() => {
     async function init() {
+      const startTime = Date.now();
       try {
         const storedId = localStorage.getItem(DEVICE_ID_KEY);
         const result = await api.guestLogin(storedId || undefined);
@@ -61,7 +62,11 @@ export default function App() {
         localStorage.setItem(DEVICE_ID_KEY, localId);
         setDeviceId(localId);
       } finally {
-        setIsLoading(false);
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, 3000 - elapsed);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, remaining);
       }
     }
     init();
@@ -335,10 +340,37 @@ export default function App() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-surface-dim flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-primary text-2xl font-bold font-headline mb-4">POKERIQ</h1>
-          <div className="w-8 h-8 border-3 border-primary/30 border-t-primary rounded-full animate-spin mx-auto" />
+      <div className="min-h-screen bg-surface-dim flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-[80px]" />
+        
+        <div className="text-center relative z-10 flex flex-col items-center">
+          <div className="relative mb-6">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-20 h-20 drop-shadow-[0_0_15px_rgba(70,241,197,0.5)]">
+              <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="url(#paint0_linear)" strokeWidth="1.5"/>
+              <path d="M12 7V17M7 12H17" stroke="url(#paint1_linear)" strokeWidth="1.5" strokeLinecap="round"/>
+              <circle cx="12" cy="12" r="3" fill="currentColor" className="text-primary"/>
+              <defs>
+                <linearGradient id="paint0_linear" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#46F1C5" />
+                  <stop offset="1" stopColor="#46F1C5" stopOpacity="0" />
+                </linearGradient>
+                <linearGradient id="paint1_linear" x1="7" y1="7" x2="17" y2="17" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#46F1C5" />
+                  <stop offset="1" stopColor="#46F1C5" stopOpacity="0.2" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <div className="absolute inset-0 border-r-2 border-t-2 border-primary rounded-full animate-[spin_3s_linear_infinite]" />
+          </div>
+          
+          <h1 className="text-white text-4xl font-black font-headline tracking-widest mb-3">
+            POKER<span className="text-primary">IQ</span>
+          </h1>
+          <p className="text-white/60 text-sm tracking-[0.2em] font-medium uppercase mb-8">
+            Master the Odds, Own the Table
+          </p>
+          
+          <div className="w-8 h-8 border-3 border-primary/20 border-t-primary rounded-full animate-spin" />
         </div>
       </div>
     );
