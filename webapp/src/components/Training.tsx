@@ -164,7 +164,7 @@ export const Training: React.FC<TrainingProps> = ({ onStartQuiz, deviceId }) => 
         {wrongCount > 0 && (
           <section className="px-1">
             <div 
-              onClick={() => onStartQuiz(undefined, 'practice')}
+              onClick={() => onStartQuiz('mistake', 'practice', { isMistake: true, total: wrongCount, current: 1 })}
               className="bg-gradient-to-r from-error/20 to-[#0a0f12] border border-error/30 shadow-[0_4px_20px_rgba(255,87,87,0.15)] p-5 rounded-2xl flex justify-between items-center active:scale-[0.98] transition-all cursor-pointer"
             >
               <div className="flex items-center gap-3">

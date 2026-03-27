@@ -161,7 +161,7 @@ export const Challenge: React.FC<ChallengeProps> = ({ onStartChallenge }) => {
           <div className="relative z-10">
             <div className="flex justify-between items-start mb-4">
               <div>
-                <h2 className="text-4xl font-headline font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 leading-tight">周赛挑战</h2>
+                <h2 className="text-3xl whitespace-nowrap font-headline font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/60 leading-tight">周赛挑战</h2>
                 <div className="flex items-center gap-2 mt-2">
                   <span className="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_10px_rgba(70,241,197,0.8)]" />
                   <p className="text-primary font-bold text-xs uppercase tracking-[0.2em]">PokerIQ League</p>
@@ -344,7 +344,7 @@ export const Challenge: React.FC<ChallengeProps> = ({ onStartChallenge }) => {
                         <span className="text-base font-headline font-bold text-white/30">{user.rank}</span>
                       )}
                     </div>
-                    <div className={`w-10 h-10 rounded-full bg-white/5 ml-3 overflow-hidden border-2 flex items-center justify-center shadow-inner ${user.rank <= 3 ? (user.rank === 1 ? 'border-yellow-400/50' : user.rank === 2 ? 'border-slate-300/50' : 'border-orange-400/50') : 'border-white/10'}`}>
+                    <div className={`w-10 h-10 shrink-0 rounded-full bg-white/5 ml-3 overflow-hidden border-2 flex items-center justify-center shadow-inner ${user.rank <= 3 ? (user.rank === 1 ? 'border-yellow-400/50' : user.rank === 2 ? 'border-slate-300/50' : 'border-orange-400/50') : 'border-white/10'}`}>
                       {displayAvatar ? (
                         <img className="w-full h-full object-cover" src={displayAvatar} alt={displayName} />
                       ) : (
@@ -353,10 +353,10 @@ export const Challenge: React.FC<ChallengeProps> = ({ onStartChallenge }) => {
                         </span>
                       )}
                     </div>
-                    <div className="ml-4 flex-1">
-                      <div className="flex flex-col">
-                        <div className="flex items-center gap-2">
-                          <p className={`text-sm font-bold ${isCurrentUser ? 'text-primary' : 'text-white/90'}`}>{displayName}</p>
+                    <div className="ml-4 flex-1 min-w-0 pr-3">
+                      <div className="flex flex-col min-w-0 w-full">
+                        <div className="flex items-center gap-2 w-full">
+                          <p className={`text-sm font-bold truncate ${isCurrentUser ? 'text-primary' : 'text-white/90'}`}>{displayName}</p>
                           {isCurrentUser && (
                             <span className="px-1.5 py-0.5 rounded text-[8px] font-black bg-primary/20 text-primary uppercase tracking-wider">我</span>
                           )}
@@ -401,7 +401,7 @@ export const Challenge: React.FC<ChallengeProps> = ({ onStartChallenge }) => {
             <div className="w-8 flex justify-center">
               <span className="text-sm font-headline font-black text-primary drop-shadow-[0_0_8px_rgba(70,241,197,0.5)]">{myRankNum}</span>
             </div>
-            <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-primary to-secondary ml-3 p-[2px] shadow-[0_0_15px_rgba(70,241,197,0.3)]">
+            <div className="w-10 h-10 shrink-0 rounded-full bg-gradient-to-tr from-primary to-secondary ml-3 p-[2px] shadow-[0_0_15px_rgba(70,241,197,0.3)]">
               <div className="w-full h-full rounded-full overflow-hidden bg-[#0a0f12] flex items-center justify-center">
                 {localAvatar ? (
                   <img className="w-full h-full object-cover" src={localAvatar} alt="我" />
@@ -410,8 +410,8 @@ export const Challenge: React.FC<ChallengeProps> = ({ onStartChallenge }) => {
                 )}
               </div>
             </div>
-            <div className="ml-4 flex-1">
-              <p className="text-sm font-black text-white">{localNickname || '我'}</p>
+            <div className="ml-4 flex-1 min-w-0 pr-2">
+              <p className="text-sm font-black text-white truncate">{localNickname || '我'}</p>
               <p className="text-[10px] text-primary/80 font-bold uppercase tracking-wide">
                 {beatPercentage > 0 ? `击败了 ${beatPercentage}% 玩家` : '继续努力！'}
               </p>

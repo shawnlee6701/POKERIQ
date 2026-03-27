@@ -44,6 +44,7 @@ export default function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [learningChapter, setLearningChapter] = useState<{ id: string; completed: number; correct: number; total: number } | null>(null);
   const [chapterResultData, setChapterResultData] = useState<{ chapterId: string; chapterName: string; correct: number; total: number; isPassed: boolean } | null>(null);
+  const [mistakeSession, setMistakeSession] = useState<{ current: number; total: number } | null>(null);
 
   // 初始化：匿名登录
   useEffect(() => {
@@ -109,12 +110,28 @@ export default function App() {
         setLearningChapter(currentChapter);
       }
 
-      const result = await api.generateQuestion(type, mode);
+      let progressStr = '';
+      if (type === 'mistake') {
+        if (chapter && chapter.isMistake) {
+          setMistakeSession({ current: chapter.current, total: chapter.total });
+          progressStr = `${chapter.current} / ${chapter.total}`;
+        } else if (mistakeSession) {
+          const next = mistakeSession.current + 1;
+          setMistakeSession({ total: mistakeSession.total, current: next });
+          progressStr = `${next} / ${mistakeSession.total}`;
+        }
+      } else {
+        setMistakeSession(null);
+      }
+
+      const result = await api.generateQuestion(type, mode, deviceId);
       // 将 mode 存入题目，方便下一题时使用
       if (result.question) {
         (result.question as any)._mode = mode;
         if (mode === 'learning' && currentChapter) {
           result.question.progress = `${currentChapter.completed + 1} / ${currentChapter.total}`;
+        } else if (type === 'mistake' && progressStr) {
+          result.question.progress = progressStr;
         }
       }
       setCurrentQuestion(result.question);
@@ -154,6 +171,7 @@ export default function App() {
   const handleReturnToTraining = async () => {
     setLearningChapter(null);
     setChapterResultData(null);
+    setMistakeSession(null);
     await refreshProfile();
     setScreen('training');
   };
@@ -228,6 +246,11 @@ export default function App() {
         setScreen('chapter-result');
         return;
       }
+    }
+    
+    if (mistakeSession) {
+      handleStartQuiz('mistake', 'practice');
+      return;
     }
     
     handleStartQuiz(type, mode);

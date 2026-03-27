@@ -8,9 +8,31 @@ export const questionsRouter = Router();
  * POST /api/questions/generate
  * Body: { type?: 'outs'|'equity'|'odds'|'preflop'|'random', count?: number }
  */
-questionsRouter.post('/generate', (req, res) => {
+questionsRouter.post('/generate', async (req, res) => {
   try {
-    const { type, mode, count = 1, difficulty } = req.body;
+    const { type, mode, count = 1, difficulty, deviceId } = req.body;
+    
+    // Handle Mistake Review
+    if (type === 'mistake') {
+      if (!deviceId) return res.status(400).json({ error: 'deviceId required for mistake mode' });
+      const { data: wrongQuestions, error } = await supabaseAdmin
+        .from('wrong_questions')
+        .select('*')
+        .eq('device_id', deviceId)
+        .eq('mastered', false);
+        
+      if (wrongQuestions && wrongQuestions.length > 0) {
+        const t = wrongQuestions[Math.floor(Math.random() * wrongQuestions.length)];
+        const qData = t.question_data;
+        qData.chapter = '错题强化';
+        qData._wrongRecordId = t.id;
+        return res.json({ question: qData });
+      } else {
+        const fallback = generateQuestion('outs', mode, difficulty);
+        fallback.chapter = '错题强化 (已无错题)';
+        return res.json({ question: fallback });
+      }
+    }
     
     let questionType = type === 'random' || type === 'Random' ? undefined : type;
     let explicitDifficulty = difficulty;
@@ -76,13 +98,21 @@ questionsRouter.post('/verify', async (req, res) => {
         .eq('device_id', deviceId);
     }
 
-    // 如果答错，加入错题本
-    if (!isCorrect && questionData) {
+    // 如果答错且不是在复习错题，则加入错题本
+    if (!isCorrect && questionData && !questionData._wrongRecordId) {
       await supabaseAdmin.from('wrong_questions').insert({
         device_id: deviceId,
         question_type: questionType,
         question_data: questionData,
       });
+    }
+
+    // 如果是错题再练且答对，从错题本移出 (标记 mastered=true)
+    if (isCorrect && questionData && questionData._wrongRecordId) {
+      await supabaseAdmin
+        .from('wrong_questions')
+        .update({ mastered: true })
+        .eq('id', questionData._wrongRecordId);
     }
 
     return res.json({ recorded: true });

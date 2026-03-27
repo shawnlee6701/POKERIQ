@@ -10,10 +10,15 @@ interface QuizProps {
 }
 
 const TYPE_LABELS: Record<string, { text: string; color: string }> = {
-  outs:    { text: '补牌计算', color: 'text-primary bg-primary/10 border-primary/20' },
-  odds:    { text: '赔率计算', color: 'text-tertiary bg-tertiary/10 border-tertiary/20' },
-  equity:  { text: '胜率判断', color: 'text-secondary bg-secondary/10 border-secondary/20' },
-  preflop: { text: '翻前策略', color: 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20' },
+  outs:     { text: '补牌计算', color: 'text-primary bg-primary/10 border-primary/20' },
+  odds:     { text: '赔率计算', color: 'text-tertiary bg-tertiary/10 border-tertiary/20' },
+  equity:   { text: '胜率判断', color: 'text-secondary bg-secondary/10 border-secondary/20' },
+  preflop:  { text: '翻前策略', color: 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20' },
+  position: { text: '位置策略', color: 'text-indigo-400 bg-indigo-400/10 border-indigo-400/20' },
+  ev:       { text: 'EV 决策',  color: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20' },
+  bluff:    { text: '诈唬识别', color: 'text-rose-400 bg-rose-400/10 border-rose-400/20' },
+  style:    { text: '对手风格', color: 'text-fuchsia-400 bg-fuchsia-400/10 border-fuchsia-400/20' },
+  mixed:    { text: '综合实战', color: 'text-purple-400 bg-purple-400/10 border-purple-400/20' },
 };
 
 const DIFF_LABELS: Record<string, { text: string; color: string }> = {

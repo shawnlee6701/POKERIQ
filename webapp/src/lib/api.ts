@@ -33,10 +33,10 @@ export async function guestLogin(deviceId?: string) {
 
 // ============ Questions ============
 
-export async function generateQuestion(type?: string, mode?: 'learning' | 'practice') {
+export async function generateQuestion(type?: string, mode?: 'learning' | 'practice', deviceId?: string) {
   return apiFetch<{ question: any }>('/questions/generate', {
     method: 'POST',
-    body: JSON.stringify({ type, mode, count: 1 }),
+    body: JSON.stringify({ type, mode, count: 1, deviceId }),
   });
 }
 

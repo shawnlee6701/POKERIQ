@@ -3,6 +3,18 @@ import { supabaseAdmin } from '../supabase.js';
 
 export const challengeRouter = Router();
 
+// ==== Memory Cache for Leaderboards ====
+const leaderboardCache: Record<string, { timestamp: number, leaderboard: any[], bestByDevice: Map<string, any>, totalPlayers: number }> = {
+  weekly: { timestamp: 0, leaderboard: [], bestByDevice: new Map(), totalPlayers: 0 },
+  all: { timestamp: 0, leaderboard: [], bestByDevice: new Map(), totalPlayers: 0 }
+};
+
+// 获取东八区日期字符串用于判定是否隔天 (YYYY-M-D)
+function getBeijingDateString(timestamp: number) {
+  const d = new Date(timestamp + 8 * 3600 * 1000); // UTC+8
+  return `${d.getUTCFullYear()}-${d.getUTCMonth() + 1}-${d.getUTCDate()}`;
+}
+
 function getCurrentWeek(): string {
   const now = new Date();
   const oneJan = new Date(now.getFullYear(), 0, 1);
@@ -145,46 +157,73 @@ challengeRouter.get('/leaderboard', async (req, res) => {
     const type = (req.query.type as string) || 'weekly';
     const deviceId = req.query.deviceId as string;
 
-    let query = supabaseAdmin.from('challenge_results').select(`
-      device_id,
-      correct_count,
-      time_spent_seconds,
-      challenge_week,
-      profiles!inner(nickname, avatar_style)
-    `);
+    const cacheKey = type === 'weekly' ? 'weekly' : 'all';
+    const now = Date.now();
+    
+    let leaderboard = [];
+    let bestByDevice = new Map<string, any>();
+    let totalPlayers = 0;
 
-    if (type === 'weekly') {
-      query = query.eq('challenge_week', getCurrentWeek());
-    }
+    const cachedDate = leaderboardCache[cacheKey].timestamp ? getBeijingDateString(leaderboardCache[cacheKey].timestamp) : '';
+    const nowDate = getBeijingDateString(now);
 
-    const { data: results, error } = await query
-      .order('correct_count', { ascending: false })
-      .order('time_spent_seconds', { ascending: true })
-      .limit(100);
+    // 只要都在东八区的同一天内，就一直使用缓存
+    if (leaderboardCache[cacheKey].timestamp && cachedDate === nowDate) {
+      // 缓存命中
+      leaderboard = leaderboardCache[cacheKey].leaderboard;
+      bestByDevice = leaderboardCache[cacheKey].bestByDevice;
+      totalPlayers = leaderboardCache[cacheKey].totalPlayers;
+    } else {
+      let query = supabaseAdmin.from('challenge_results').select(`
+        device_id,
+        correct_count,
+        time_spent_seconds,
+        challenge_week,
+        profiles!inner(nickname, avatar_style)
+      `);
 
-    if (error) throw error;
-
-    // 去重（每个用户只保留最佳成绩）
-    const bestByDevice = new Map<string, any>();
-    (results || []).forEach(r => {
-      const existing = bestByDevice.get(r.device_id);
-      if (!existing || r.correct_count > existing.correct_count || 
-          (r.correct_count === existing.correct_count && r.time_spent_seconds < existing.time_spent_seconds)) {
-        bestByDevice.set(r.device_id, r);
+      if (type === 'weekly') {
+        query = query.eq('challenge_week', getCurrentWeek());
       }
-    });
 
-    const leaderboard = Array.from(bestByDevice.values())
-      .sort((a, b) => b.correct_count - a.correct_count || a.time_spent_seconds - b.time_spent_seconds)
-      .slice(0, 100)
-      .map((r, idx) => ({
-        rank: idx + 1,
-        deviceId: r.device_id,
-        name: (r.profiles as any)?.nickname || 'Player',
-        avatarStyle: (r.profiles as any)?.avatar_style || 'shark',
-        correct: r.correct_count,
-        timeSpent: r.time_spent_seconds,
-      }));
+      const { data: results, error } = await query
+        .order('correct_count', { ascending: false })
+        .order('time_spent_seconds', { ascending: true })
+        .limit(100);
+
+      if (error) throw error;
+
+      // 去重（每个用户只保留最佳成绩）
+      (results || []).forEach(r => {
+        const existing = bestByDevice.get(r.device_id);
+        if (!existing || r.correct_count > existing.correct_count || 
+            (r.correct_count === existing.correct_count && r.time_spent_seconds < existing.time_spent_seconds)) {
+          bestByDevice.set(r.device_id, r);
+        }
+      });
+
+      leaderboard = Array.from(bestByDevice.values())
+        .sort((a, b) => b.correct_count - a.correct_count || a.time_spent_seconds - b.time_spent_seconds)
+        .slice(0, 100)
+        .map((r, idx) => ({
+          rank: idx + 1,
+          deviceId: r.device_id,
+          name: (r.profiles as any)?.nickname || 'Player',
+          avatarStyle: (r.profiles as any)?.avatar_style || 'shark',
+          correct: r.correct_count,
+          timeSpent: r.time_spent_seconds,
+        }));
+        
+      totalPlayers = bestByDevice.size;
+      
+      // 更新缓存
+      leaderboardCache[cacheKey] = {
+        timestamp: now,
+        leaderboard,
+        bestByDevice,
+        totalPlayers
+      };
+    }
 
     // 获取当前用户排名
     let myRank = null;
@@ -211,7 +250,6 @@ challengeRouter.get('/leaderboard', async (req, res) => {
       }
     }
 
-    const totalPlayers = bestByDevice.size;
     const beatPercentage = myRank ? Math.round((1 - myRank.rank / Math.max(totalPlayers, 1)) * 100) : 0;
 
     return res.json({

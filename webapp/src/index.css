@@ -25,6 +25,16 @@
   body {
     @apply bg-surface-dim text-on-surface font-sans antialiased;
   }
+  
+  /* Hide scrollbars globally to maintain mobile app immersion */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  * {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
 }
 
 @layer components {
