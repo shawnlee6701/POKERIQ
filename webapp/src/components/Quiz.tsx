@@ -33,6 +33,14 @@ export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onBack }) => {
   }, []);
 
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleConfirm = () => {
+    if (selectedOptionId && !isSubmitting) {
+      setIsSubmitting(true);
+      onAnswer(selectedOptionId);
+    }
+  };
 
   const typeInfo = TYPE_LABELS[question.type] || TYPE_LABELS.outs;
   const diffInfo = DIFF_LABELS[question.difficulty] || DIFF_LABELS.easy;
@@ -45,7 +53,8 @@ export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onBack }) => {
           <div className="flex items-center overflow-hidden">
             <button 
               onClick={onBack}
-              className="p-2 mr-2 text-on-surface hover:bg-white/5 rounded-full"
+              disabled={isSubmitting}
+              className="p-2 mr-2 text-on-surface hover:bg-white/5 rounded-full disabled:opacity-50"
             >
               <ArrowLeft className="w-6 h-6" />
             </button>
@@ -118,8 +127,9 @@ export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onBack }) => {
             return (
               <button
                 key={option.id}
+                disabled={isSubmitting}
                 onClick={() => setSelectedOptionId(option.id)}
-                className={`w-full flex items-center justify-between p-4 rounded-xl transition-all ${
+                className={`w-full flex items-center justify-between p-4 rounded-xl transition-all disabled:opacity-75 ${
                   isSelected 
                     ? 'bg-primary/10 border-2 border-primary shadow-[0_0_20px_rgba(70,241,197,0.1)] scale-[1.01]' 
                     : 'bg-surface-container-high border border-white/5 hover:bg-surface-container-highest active:scale-[0.98]'
@@ -145,15 +155,17 @@ export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onBack }) => {
       <footer className="fixed bottom-0 left-0 w-full p-6 bg-gradient-to-t from-[#0D0D14] via-[#0D0D14]/95 to-transparent z-40">
         <div className="max-w-xl mx-auto">
           <button
-            disabled={!selectedOptionId}
-            onClick={() => selectedOptionId && onAnswer(selectedOptionId)}
+            disabled={!selectedOptionId || isSubmitting}
+            onClick={handleConfirm}
             className={`w-full flex items-center justify-center h-14 rounded-xl transition-all group ${
               selectedOptionId 
                 ? 'bg-primary shadow-[0_8px_24px_rgba(70,241,197,0.25)] active:scale-[0.97]' 
                 : 'bg-surface-container-highest text-on-surface-variant cursor-not-allowed'
-            }`}
+            } ${isSubmitting ? 'opacity-70 pointer-events-none' : ''}`}
           >
-            <span className={`font-headline font-extrabold text-base uppercase tracking-widest ${selectedOptionId ? 'text-surface-dim' : ''}`}>确认</span>
+            <span className={`font-headline font-extrabold text-base uppercase tracking-widest ${selectedOptionId ? 'text-surface-dim' : ''}`}>
+              {isSubmitting ? '提交中...' : '确认'}
+            </span>
           </button>
         </div>
       </footer>

@@ -113,10 +113,20 @@ export default function App() {
       let progressStr = '';
       if (type === 'mistake') {
         if (chapter && chapter.isMistake) {
-          setMistakeSession({ current: chapter.current, total: chapter.total });
-          progressStr = `${chapter.current} / ${chapter.total}`;
+          if (chapter.total === 0) {
+            alert('没有错题啦！');
+            setScreen('training');
+            return;
+          }
+          setMistakeSession({ current: 1, total: chapter.total });
+          progressStr = `1 / ${chapter.total}`;
         } else if (mistakeSession) {
           const next = mistakeSession.current + 1;
+          if (next > mistakeSession.total) {
+             alert('本轮错题复习完成！');
+             handleReturnToTraining();
+             return;
+          }
           setMistakeSession({ total: mistakeSession.total, current: next });
           progressStr = `${next} / ${mistakeSession.total}`;
         }
@@ -201,6 +211,9 @@ export default function App() {
   const handleAnswer = async (optionId: string) => {
     setSelectedOptionId(optionId);
     
+    // 先跳转到Feedback页避免按钮无响应的延迟感
+    setScreen('feedback');
+    
     if (currentQuestion && deviceId) {
       const isCorrect = optionId === currentQuestion.correctOptionId;
       try {
@@ -225,8 +238,6 @@ export default function App() {
         console.warn('Failed to verify answer:', err);
       }
     }
-    
-    setScreen('feedback');
   };
 
   const handleNextQuestion = async () => {
@@ -249,6 +260,11 @@ export default function App() {
     }
     
     if (mistakeSession) {
+      if (mistakeSession.current >= mistakeSession.total) {
+        alert('干得漂亮！本轮错题复习完成！');
+        handleReturnToTraining();
+        return;
+      }
       handleStartQuiz('mistake', 'practice');
       return;
     }

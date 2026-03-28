@@ -100,11 +100,30 @@ questionsRouter.post('/verify', async (req, res) => {
 
     // 如果答错且不是在复习错题，则加入错题本
     if (!isCorrect && questionData && !questionData._wrongRecordId) {
-      await supabaseAdmin.from('wrong_questions').insert({
-        device_id: deviceId,
-        question_type: questionType,
-        question_data: questionData,
-      });
+      // 检查是否已有相同错题（未掌握状态）
+      const { data: existing } = await supabaseAdmin
+        .from('wrong_questions')
+        .select('id, question_data')
+        .eq('device_id', deviceId)
+        .eq('question_type', questionType)
+        .eq('mastered', false);
+
+      let isDuplicate = false;
+      if (existing && existing.length > 0) {
+        // 由于 question_data 存储为 JSONB，最准确的是对比 situation 和 correctOptionId
+        isDuplicate = existing.some(row => 
+          row.question_data?.situation === questionData.situation &&
+          row.question_data?.correctOptionId === questionData.correctOptionId
+        );
+      }
+
+      if (!isDuplicate) {
+        await supabaseAdmin.from('wrong_questions').insert({
+          device_id: deviceId,
+          question_type: questionType,
+          question_data: questionData,
+        });
+      }
     }
 
     // 如果是错题再练且答对，从错题本移出 (标记 mastered=true)

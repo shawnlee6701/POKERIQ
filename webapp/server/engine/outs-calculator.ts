@@ -258,7 +258,7 @@ function detectPairingOuts(hand: Card[], board: Card[], deck: Card[]): { outs: n
   if (outsCards.length === 0) return null;
 
   const typeParts: string[] = [];
-  if (tripsCount > 0) typeParts.push(`明三条听牌`);
+  if (tripsCount > 0) typeParts.push(`提升至明三条`);
   if (overcardCount > 0) typeParts.push(`${overcardCount}张高牌配对`);
   if (kickerCount > 0 && tripsCount === 0 && overcardCount === 0) typeParts.push(`对子听牌`);
 

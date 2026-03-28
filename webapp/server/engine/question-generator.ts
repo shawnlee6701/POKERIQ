@@ -496,7 +496,20 @@ function generatePreflopQuestion(): QuizQuestion {
   }
 
   const allActions = ['Raise / 加注', 'Call / 跟注', 'Fold / 弃牌', '3-Bet / 反加', 'All-in / 全下', 'Check / 过牌'];
-  const wrongActions = shuffleArray(allActions.filter(a => a !== correctAction)).slice(0, 3);
+  let validActions = [...allActions];
+  
+  // Bugfix: 动态过滤非法动作
+  if (facingRaise) {
+    validActions = validActions.filter(a => a !== 'Check / 过牌'); // 面对加注不能过牌
+  } else {
+    if (pos !== 'BB') {
+      validActions = validActions.filter(a => a !== 'Check / 过牌'); // 非盲位开池不能过牌
+    } else {
+      validActions = validActions.filter(a => a !== '3-Bet / 反加'); // 无人加注不能反加
+    }
+  }
+
+  const wrongActions = shuffleArray(validActions.filter(a => a !== correctAction)).slice(0, 3);
   const finalOptions = shuffleArray([correctAction, ...wrongActions]);
 
   // 重构难度逻辑，让弱牌能被判定为 easy 顺利出在练习题里
@@ -510,7 +523,9 @@ function generatePreflopQuestion(): QuizQuestion {
     progress: '',
     situation: facingRaise
       ? `${playerCount}人桌翻前，你在 ${pos} 位置，筹码 ${stack}BB。\n\n局面上，前位有玩家率先加注到 3BB，其他人弃牌，现在轮到你行动。`
-      : `${playerCount}人桌翻前，你在 ${pos} 位置，筹码 ${stack}BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。`,
+      : pos === 'BB' 
+        ? `${playerCount}人桌翻前，你在 ${pos} 位置，筹码 ${stack}BB。\n\n前方玩家弃牌，小盲位（SB）平跟补齐了盲注（没有加注），现在轮到你行动。`
+        : `${playerCount}人桌翻前，你在 ${pos} 位置，筹码 ${stack}BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。`,
     question: '你目前的最佳行动是？',
     hand,
     board: [],
@@ -582,7 +597,15 @@ function generatePositionQuestion(): QuizQuestion {
   }
 
   const allActions = ['Raise / 加注', 'Call / 跟注', 'Fold / 弃牌', '3-Bet / 反加', 'Check / 过牌'];
-  const wrongActions = shuffleArray(allActions.filter(a => a !== correctAction)).slice(0, 3);
+  let validActions = [...allActions];
+  
+  if (pos !== 'BB') {
+    validActions = validActions.filter(a => a !== 'Check / 过牌');
+  } else {
+    validActions = validActions.filter(a => a !== '3-Bet / 反加');
+  }
+  
+  const wrongActions = shuffleArray(validActions.filter(a => a !== correctAction)).slice(0, 3);
   const finalOptions = shuffleArray([correctAction, ...wrongActions]);
 
   const inRange = isInRFIRange(handKey, 'UTG');
@@ -596,7 +619,9 @@ function generatePositionQuestion(): QuizQuestion {
     difficulty: difficulty as any,
     chapter: '位置与行动',
     progress: '',
-    situation: `${playerCount}人桌翻前，你在 ${pos} 位置，筹码 ${stack}BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。`,
+    situation: pos === 'BB'
+      ? `${playerCount}人桌翻前，你在 ${pos} 位置，筹码 ${stack}BB。\n\n前方玩家弃牌，小盲位（SB）平跟补齐了盲注（没有加注），现在轮到你行动。`
+      : `${playerCount}人桌翻前，你在 ${pos} 位置，筹码 ${stack}BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。`,
     question: `拿到 ${handKey}，你在 ${pos} 位置的最佳行动是？`,
     hand,
     board: [],
