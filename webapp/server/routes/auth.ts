@@ -73,3 +73,32 @@ authRouter.post('/guest', async (req, res) => {
     return res.status(500).json({ error: err.message });
   }
 });
+
+/**
+ * DELETE /api/auth/delete
+ * 删除用户账号与所有关联数据 (App Store 合规要求)
+ * Body: { deviceId: string }
+ * 返回: { deleted: true }
+ */
+authRouter.delete('/delete', async (req, res) => {
+  try {
+    const { deviceId } = req.body;
+    if (!deviceId) {
+      return res.status(400).json({ error: 'deviceId is required' });
+    }
+
+    // CASCADE 会自动清理 user_progress, chapter_progress,
+    // quiz_answers, challenge_results, wrong_questions
+    const { error } = await supabaseAdmin
+      .from('profiles')
+      .delete()
+      .eq('device_id', deviceId);
+
+    if (error) throw error;
+
+    return res.json({ deleted: true });
+  } catch (err: any) {
+    console.error('Delete account error:', err);
+    return res.status(500).json({ error: err.message });
+  }
+});

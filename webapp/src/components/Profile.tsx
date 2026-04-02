@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart2, Globe, LayoutGrid, Check, X, TrendingUp, Mail, HelpCircle, Shield, FileText, Info, Edit2, Copy, ChevronRight, Camera } from 'lucide-react';
+import { BarChart2, Globe, LayoutGrid, Check, X, TrendingUp, Mail, HelpCircle, Shield, FileText, Info, Edit2, Copy, ChevronRight, Camera, Trash2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, LabelList } from 'recharts';
 import { Screen } from '../types';
@@ -546,12 +546,40 @@ export const Profile: React.FC<ProfileProps> = ({ onNavigate, deviceId }) => {
           ))}
         </section>
 
-        <div className="pt-16 pb-6 flex flex-col items-center gap-2 opacity-40 mix-blend-plus-lighter">
+        {/* Delete Account (App Store Compliance) */}
+        <section className="pt-8">
+          <button
+            onClick={async () => {
+              if (!deviceId) return;
+              const confirmed = window.confirm(
+                '⚠️ 确认删除账号？\n\n此操作将永久清除您的所有学习数据、答题记录和个人信息，且无法恢复。'
+              );
+              if (!confirmed) return;
+              const doubleConfirm = window.confirm(
+                '最后确认：真的要删除所有数据吗？'
+              );
+              if (!doubleConfirm) return;
+              try {
+                await api.deleteAccount(deviceId);
+                localStorage.removeItem('pokeriq_device_id');
+                window.location.reload();
+              } catch (err) {
+                alert('删除失败，请稍后重试。');
+              }
+            }}
+            className="w-full flex items-center justify-center gap-3 p-4 bg-red-500/10 border border-red-500/20 rounded-2xl text-red-400 hover:bg-red-500/20 transition-all active:scale-[0.98]"
+          >
+            <Trash2 className="w-5 h-5" />
+            <span className="font-black text-sm tracking-wide">删除账号与数据</span>
+          </button>
+        </section>
+
+        <div className="pt-10 pb-6 flex flex-col items-center gap-2 opacity-40 mix-blend-plus-lighter">
           <div className="flex items-center gap-1.5 text-[9px] font-black text-white/60 uppercase tracking-[0.25em]">
             <Info className="w-3 h-3 opacity-50" />
-            Engine Core v2.0.4 (Build 4913X)
+            PokerIQ v1.1.0
           </div>
-          <p className="text-[8px] text-white/30 uppercase tracking-[0.3em] font-bold">© 2026 PokerIQ Foundation</p>
+          <p className="text-[8px] text-white/30 uppercase tracking-[0.3em] font-bold">© 2026 PokerIQ Studio</p>
         </div>
       </main>
     </div>

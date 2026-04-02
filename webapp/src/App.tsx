@@ -3,7 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useState, useEffect, createContext, useContext } from 'react';
+import { useState, useEffect, useRef, createContext, useContext } from 'react';
+import { App as CapApp } from '@capacitor/app';
 import { Screen, QuizQuestion } from './types';
 import { BottomNav } from './components/BottomNav';
 import { Calculator } from './components/Calculator';
@@ -45,6 +46,19 @@ export default function App() {
   const [learningChapter, setLearningChapter] = useState<{ id: string; name: string; completed: number; correct: number; total: number } | null>(null);
   const [chapterResultData, setChapterResultData] = useState<{ chapterId: string; chapterName: string; correct: number; total: number; isPassed: boolean } | null>(null);
   const [mistakeSession, setMistakeSession] = useState<{ current: number; total: number } | null>(null);
+  const appPausedAt = useRef<number | null>(null);
+
+  // Capacitor: listen for app state changes (fix timer drift on iOS)
+  useEffect(() => {
+    const listener = CapApp.addListener('appStateChange', ({ isActive }) => {
+      if (!isActive) {
+        appPausedAt.current = Date.now();
+      } else {
+        appPausedAt.current = null;
+      }
+    });
+    return () => { listener.then(l => l.remove()); };
+  }, []);
 
   // 初始化：匿名登录
   useEffect(() => {
@@ -283,7 +297,11 @@ export default function App() {
       case 'challenge':
         return <Challenge onStartChallenge={() => setScreen('challenge-quiz')} />;
       case 'challenge-quiz':
-        return <ChallengeQuiz deviceId={deviceId} onBack={() => setScreen('challenge')} />;
+        return <ChallengeQuiz deviceId={deviceId} onBack={() => {
+          if (window.confirm('确认退出？当前挑战进度不予保存。')) {
+            setScreen('challenge');
+          }
+        }} />;
       case 'profile':
         return (
           <Profile onNavigate={(target) => setScreen(target)} deviceId={deviceId} />
@@ -311,14 +329,34 @@ export default function App() {
         return (
           <SecondaryPage title="隐私政策" onBack={() => setScreen('profile')}>
             <div className="space-y-4 text-on-surface-variant text-sm leading-relaxed">
-              <p>我们高度重视您的隐私。我们仅收集必要的学习数据以优化您的练习体验。您的个人信息绝不会在未经许可的情况下分享给第三方。</p>
-              <p>我们收集的数据包括：</p>
-              <ul className="list-disc pl-5 space-y-1">
-                <li>练习正确率与速度</li>
-                <li>学习进度与成就</li>
-                <li>设备基本信息（用于适配）</li>
-              </ul>
-              <p>我们承诺将采取一切合理措施保护您的数据安全，防止数据泄露、滥用或更改。</p>
+              <p className="text-white/40 text-xs">最后更新：2026 年 4 月 2 日</p>
+
+              <h3 className="text-on-surface font-bold mt-4">1. 概述</h3>
+              <p>PokerIQ（以下简称「我们」）致力于保护您的隐私。本隐私政策说明了我们在您使用 PokerIQ 应用程序时如何收集、使用、存储和保护您的信息。本应用为一款德州扑克概率学习与训练工具，不涉及任何形式的真实货币交易或在线博彩。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">2. 我们收集的信息</h3>
+              <p><strong>2.1 设备标识符</strong>：我们为每台设备生成唯一的匿名标识符（UUID），用于标识您的学习进度。此标识符不与您的真实身份关联。</p>
+              <p><strong>2.2 学习数据</strong>：包括答题记录（正确率、用时）、章节进度、挑战成绩和错题记录。</p>
+              <p><strong>2.3 用户偏好</strong>：昵称、头像风格选择、语言偏好。</p>
+              <p><strong>2.4 我们不收集的信息</strong>：我们不收集您的姓名、电子邮件、电话号码、地理位置、通讯录、照片或其他个人身份信息。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">3. 信息的使用</h3>
+              <p>我们收集的数据仅用于：提供并改善学习体验；记录和展示学习进度；生成排行榜排名。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">4. 数据存储与安全</h3>
+              <p>您的数据存储在经过行业标准加密的云端数据库（Supabase）中。我们采取合理的技术和管理措施防止未经授权的访问、修改或删除。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">5. 第三方共享</h3>
+              <p>我们不会向任何第三方出售、出租或共享您的个人数据。排行榜中仅展示用户自行设置的昵称和成绩信息。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">6. 您的权利</h3>
+              <p>您有权随时通过应用内「我的 → 删除账号与数据」功能永久删除您存储在我们服务器上的所有数据。删除后数据不可恢复。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">7. 儿童隐私</h3>
+              <p>本应用不面向 17 岁以下的儿童。我们不会故意收集未成年人的信息。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">8. 联系我们</h3>
+              <p>如果您对本隐私政策有任何疑问，请联系我们：support@pokeriq.com</p>
             </div>
           </SecondaryPage>
         );
@@ -326,13 +364,34 @@ export default function App() {
         return (
           <SecondaryPage title="用户协议" onBack={() => setScreen('profile')}>
             <div className="space-y-4 text-on-surface-variant text-sm leading-relaxed">
-              <p>欢迎使用 PokerIQ。通过使用本应用，您同意遵守我们的服务条款。本应用仅供学习交流使用，不涉及任何形式的真实货币赌博。</p>
-              <h3 className="text-on-surface font-bold mt-4">1. 服务说明</h3>
-              <p>PokerIQ 为用户提供德州扑克概率计算、策略练习等学习工具。</p>
-              <h3 className="text-on-surface font-bold mt-4">2. 用户行为</h3>
-              <p>用户应合法使用本应用，不得利用本应用从事任何违法活动。严禁利用本应用进行任何形式的真实货币赌博。</p>
-              <h3 className="text-on-surface font-bold mt-4">3. 免责声明</h3>
-              <p>本应用提供的数据仅供参考，不保证绝对的准确性。用户在实际游戏中的决策由其个人承担责任。</p>
+              <p className="text-white/40 text-xs">最后更新：2026 年 4 月 2 日</p>
+
+              <h3 className="text-on-surface font-bold mt-4">1. 接受条款</h3>
+              <p>通过下载、安装或使用 PokerIQ 应用程序，您同意受本用户协议的约束。如果您不同意这些条款，请勿使用本应用。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">2. 服务说明</h3>
+              <p>PokerIQ 是一款德州扑克数学训练与学习工具，旨在通过选择题练习和概率计算帮助用户提升策略分析能力。本应用的所有内容均为教育与学习目的，不构成任何形式的投资建议、博彩服务或真实货币交易平台。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">3. 教育目的声明</h3>
+              <p>本应用提供的所有概率计算、策略建议和模拟场景仅供学习和参考。用户在实际牌局中的决策完全由其个人负责。我们不鼓励、不支持、也不提供任何形式的真实货币赌博或在线博彩服务。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">4. 用户行为规范</h3>
+              <p>您同意不会：将本应用用于任何违法目的；利用本应用从事真实货币赌博；尝试干扰或破坏本应用的正常运行；使用自动化工具操纵排行榜排名。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">5. 知识产权</h3>
+              <p>本应用的所有内容，包括但不限于算法、界面设计、题目内容和品牌标识，均受知识产权法保护。未经我们明确书面授权，您不得复制、修改、分发或反向工程本应用。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">6. 免责声明</h3>
+              <p>本应用按「现状」提供，不作任何明示或暗示的担保。我们不保证应用不会发生中断或错误，也不保证计算结果的绝对准确性。在法律允许的最大范围内，我们不对因使用本应用而产生的任何直接或间接损失承担责任。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">7. 账号与数据</h3>
+              <p>您可以随时通过应用内的「删除账号与数据」功能删除您的所有数据。删除操作不可撤销。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">8. 条款修改</h3>
+              <p>我们保留随时修改本协议的权利。重大变更将通过应用内通知告知用户。继续使用本应用即视为接受修改后的条款。</p>
+
+              <h3 className="text-on-surface font-bold mt-4">9. 联系方式</h3>
+              <p>如有任何与本协议相关的问题，请联系 support@pokeriq.com。</p>
             </div>
           </SecondaryPage>
         );

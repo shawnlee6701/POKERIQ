@@ -158,3 +158,12 @@ export async function updateProfile(data: {
 export async function getProfileTrend(deviceId: string) {
   return apiFetch<any[]>(`/profile/trend?deviceId=${deviceId}`);
 }
+
+// ============ Account Deletion (App Store Compliance) ============
+
+export async function deleteAccount(deviceId: string) {
+  return apiFetch<{ deleted: boolean }>('/auth/delete', {
+    method: 'DELETE',
+    body: JSON.stringify({ deviceId }),
+  });
+}

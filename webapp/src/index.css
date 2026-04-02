@@ -22,8 +22,32 @@
 }
 
 @layer base {
+  html {
+    /* iOS: prevent overscroll bounce */
+    overscroll-behavior: none;
+    /* iOS: prevent pull-to-refresh */
+    overflow: hidden;
+    height: 100%;
+  }
+
   body {
     @apply bg-surface-dim text-on-surface font-sans antialiased;
+    /* iOS: disable tap highlight */
+    -webkit-tap-highlight-color: transparent;
+    /* iOS: disable touch callout (long-press menu) */
+    -webkit-touch-callout: none;
+    /* iOS: prevent text size adjust on orientation change */
+    -webkit-text-size-adjust: 100%;
+    /* Fill the viewport */
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Prevent text selection on interactive elements (native feel) */
+  button, a, [role="button"], nav {
+    -webkit-user-select: none;
+    user-select: none;
   }
   
   /* Hide scrollbars globally to maintain mobile app immersion */
