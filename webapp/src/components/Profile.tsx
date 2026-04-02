@@ -463,7 +463,7 @@ export const Profile: React.FC<ProfileProps> = ({ onNavigate, deviceId }) => {
                       fill="url(#colorAccuracy)" 
                       animationDuration={1500}
                       dot={{ r: 5, fill: '#0a0f12', stroke: '#46F1C5', strokeWidth: 3 }}
-                      activeDot={{ r: 8, fill: '#46F1C5', stroke: '#0a0f12', strokeWidth: 3, shadow: '0 0 10px #46F1C5' }}
+                      activeDot={{ r: 8, fill: '#46F1C5', stroke: '#0a0f12', strokeWidth: 3 }}
                     >
                       <LabelList 
                         dataKey="accuracy" 

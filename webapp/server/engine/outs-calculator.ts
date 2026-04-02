@@ -411,8 +411,13 @@ export function calculateOuts(
     }
 
     const straightDraw = detectStraightDraw(hand, board);
-    if (straightDraw) {
-      const overlap = flushDraw ? 1 : 0;
+    if (straightDraw && straightDraw.missingRanks) {
+      // 动态计算同花+顺子的重叠 outs
+      const overlap = flushDraw
+        ? straightDraw.missingRanks.filter(r =>
+            deck.some(c => rankValue(c.rank) === r && c.suit === flushDraw.suit)
+          ).length
+        : 0;
       totalOuts += straightDraw.outs - overlap;
       outsTypes.push(straightDraw.type);
       outsCards.push(...deck.filter(c => {

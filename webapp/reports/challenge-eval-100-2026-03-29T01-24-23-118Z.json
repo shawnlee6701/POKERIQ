@@ -1,0 +1,4574 @@
+{
+  "generatedAt": "2026-03-29T01:24:23.116Z",
+  "config": {
+    "count": 100,
+    "nearDuplicateThreshold": 0.85
+  },
+  "summary": {
+    "total": 100,
+    "avgSetterScore": 100,
+    "medianSetterScore": 100,
+    "answerCorrect": 56,
+    "answerAccuracy": "56.0%",
+    "exactDuplicateHits": 2,
+    "exactDuplicateRate": "2.0%",
+    "nearDuplicatePairs": 9
+  },
+  "distribution": {
+    "byType": {
+      "outs": 13,
+      "equity": 13,
+      "odds": 13,
+      "preflop": 13,
+      "position": 12,
+      "ev": 12,
+      "bluff": 12,
+      "style": 12
+    },
+    "byDifficulty": {
+      "medium": 33,
+      "hard": 22,
+      "easy": 45
+    }
+  },
+  "answerer": {
+    "byStrategy": {
+      "formula_outs": 13,
+      "formula_equity": 11,
+      "formula_odds": 13,
+      "random_fallback": 63
+    },
+    "wrongIndices": [
+      {
+        "i": 3,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 4,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 5,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 6,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 7,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 11,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 13,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 15,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 19,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 20,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 22,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 23,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 25,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 27,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 28,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 30,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 33,
+        "isCorrect": false,
+        "strategy": "formula_equity"
+      },
+      {
+        "i": 35,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 39,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 43,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 44,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 45,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 47,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 51,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 52,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 53,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 54,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 55,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 60,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 62,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 63,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 68,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 69,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 71,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 75,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 76,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 77,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 78,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 83,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 84,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 86,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 91,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 92,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      },
+      {
+        "i": 93,
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    ]
+  },
+  "quality": {
+    "lowestScored": [
+      {
+        "index": 0,
+        "score": 100,
+        "issues": [],
+        "type": "outs"
+      },
+      {
+        "index": 1,
+        "score": 100,
+        "issues": [],
+        "type": "equity"
+      },
+      {
+        "index": 2,
+        "score": 100,
+        "issues": [],
+        "type": "odds"
+      },
+      {
+        "index": 3,
+        "score": 100,
+        "issues": [],
+        "type": "preflop"
+      },
+      {
+        "index": 4,
+        "score": 100,
+        "issues": [],
+        "type": "position"
+      },
+      {
+        "index": 5,
+        "score": 100,
+        "issues": [],
+        "type": "ev"
+      },
+      {
+        "index": 6,
+        "score": 100,
+        "issues": [],
+        "type": "bluff"
+      },
+      {
+        "index": 7,
+        "score": 100,
+        "issues": [],
+        "type": "style"
+      },
+      {
+        "index": 8,
+        "score": 100,
+        "issues": [],
+        "type": "outs"
+      },
+      {
+        "index": 9,
+        "score": 100,
+        "issues": [],
+        "type": "equity"
+      },
+      {
+        "index": 10,
+        "score": 100,
+        "issues": [],
+        "type": "odds"
+      },
+      {
+        "index": 11,
+        "score": 100,
+        "issues": [],
+        "type": "preflop"
+      },
+      {
+        "index": 12,
+        "score": 100,
+        "issues": [],
+        "type": "position"
+      },
+      {
+        "index": 13,
+        "score": 100,
+        "issues": [],
+        "type": "ev"
+      },
+      {
+        "index": 14,
+        "score": 100,
+        "issues": [],
+        "type": "bluff"
+      },
+      {
+        "index": 15,
+        "score": 100,
+        "issues": [],
+        "type": "style"
+      },
+      {
+        "index": 16,
+        "score": 100,
+        "issues": [],
+        "type": "outs"
+      },
+      {
+        "index": 17,
+        "score": 100,
+        "issues": [],
+        "type": "equity"
+      },
+      {
+        "index": 18,
+        "score": 100,
+        "issues": [],
+        "type": "odds"
+      },
+      {
+        "index": 19,
+        "score": 100,
+        "issues": [],
+        "type": "preflop"
+      },
+      {
+        "index": 20,
+        "score": 100,
+        "issues": [],
+        "type": "position"
+      },
+      {
+        "index": 21,
+        "score": 100,
+        "issues": [],
+        "type": "ev"
+      },
+      {
+        "index": 22,
+        "score": 100,
+        "issues": [],
+        "type": "bluff"
+      },
+      {
+        "index": 23,
+        "score": 100,
+        "issues": [],
+        "type": "style"
+      },
+      {
+        "index": 24,
+        "score": 100,
+        "issues": [],
+        "type": "outs"
+      },
+      {
+        "index": 25,
+        "score": 100,
+        "issues": [],
+        "type": "equity"
+      },
+      {
+        "index": 26,
+        "score": 100,
+        "issues": [],
+        "type": "odds"
+      },
+      {
+        "index": 27,
+        "score": 100,
+        "issues": [],
+        "type": "preflop"
+      },
+      {
+        "index": 28,
+        "score": 100,
+        "issues": [],
+        "type": "position"
+      },
+      {
+        "index": 29,
+        "score": 100,
+        "issues": [],
+        "type": "ev"
+      },
+      {
+        "index": 30,
+        "score": 100,
+        "issues": [],
+        "type": "bluff"
+      },
+      {
+        "index": 31,
+        "score": 100,
+        "issues": [],
+        "type": "style"
+      },
+      {
+        "index": 32,
+        "score": 100,
+        "issues": [],
+        "type": "outs"
+      },
+      {
+        "index": 33,
+        "score": 100,
+        "issues": [],
+        "type": "equity"
+      },
+      {
+        "index": 34,
+        "score": 100,
+        "issues": [],
+        "type": "odds"
+      },
+      {
+        "index": 35,
+        "score": 100,
+        "issues": [],
+        "type": "preflop"
+      },
+      {
+        "index": 36,
+        "score": 100,
+        "issues": [],
+        "type": "position"
+      },
+      {
+        "index": 37,
+        "score": 100,
+        "issues": [],
+        "type": "ev"
+      },
+      {
+        "index": 38,
+        "score": 100,
+        "issues": [],
+        "type": "bluff"
+      },
+      {
+        "index": 39,
+        "score": 100,
+        "issues": [],
+        "type": "style"
+      },
+      {
+        "index": 40,
+        "score": 100,
+        "issues": [],
+        "type": "outs"
+      },
+      {
+        "index": 41,
+        "score": 100,
+        "issues": [],
+        "type": "equity"
+      },
+      {
+        "index": 42,
+        "score": 100,
+        "issues": [],
+        "type": "odds"
+      },
+      {
+        "index": 43,
+        "score": 100,
+        "issues": [],
+        "type": "preflop"
+      },
+      {
+        "index": 44,
+        "score": 100,
+        "issues": [],
+        "type": "position"
+      },
+      {
+        "index": 45,
+        "score": 100,
+        "issues": [],
+        "type": "ev"
+      },
+      {
+        "index": 46,
+        "score": 100,
+        "issues": [],
+        "type": "bluff"
+      },
+      {
+        "index": 47,
+        "score": 100,
+        "issues": [],
+        "type": "style"
+      },
+      {
+        "index": 48,
+        "score": 100,
+        "issues": [],
+        "type": "outs"
+      },
+      {
+        "index": 49,
+        "score": 100,
+        "issues": [],
+        "type": "equity"
+      },
+      {
+        "index": 50,
+        "score": 100,
+        "issues": [],
+        "type": "odds"
+      },
+      {
+        "index": 51,
+        "score": 100,
+        "issues": [],
+        "type": "preflop"
+      },
+      {
+        "index": 52,
+        "score": 100,
+        "issues": [],
+        "type": "position"
+      },
+      {
+        "index": 53,
+        "score": 100,
+        "issues": [],
+        "type": "ev"
+      },
+      {
+        "index": 54,
+        "score": 100,
+        "issues": [],
+        "type": "bluff"
+      },
+      {
+        "index": 55,
+        "score": 100,
+        "issues": [],
+        "type": "style"
+      },
+      {
+        "index": 56,
+        "score": 100,
+        "issues": [],
+        "type": "outs"
+      },
+      {
+        "index": 57,
+        "score": 100,
+        "issues": [],
+        "type": "equity"
+      },
+      {
+        "index": 58,
+        "score": 100,
+        "issues": [],
+        "type": "odds"
+      },
+      {
+        "index": 59,
+        "score": 100,
+        "issues": [],
+        "type": "preflop"
+      },
+      {
+        "index": 60,
+        "score": 100,
+        "issues": [],
+        "type": "position"
+      },
+      {
+        "index": 61,
+        "score": 100,
+        "issues": [],
+        "type": "ev"
+      },
+      {
+        "index": 62,
+        "score": 100,
+        "issues": [],
+        "type": "bluff"
+      },
+      {
+        "index": 63,
+        "score": 100,
+        "issues": [],
+        "type": "style"
+      },
+      {
+        "index": 64,
+        "score": 100,
+        "issues": [],
+        "type": "outs"
+      },
+      {
+        "index": 65,
+        "score": 100,
+        "issues": [],
+        "type": "equity"
+      },
+      {
+        "index": 66,
+        "score": 100,
+        "issues": [],
+        "type": "odds"
+      },
+      {
+        "index": 67,
+        "score": 100,
+        "issues": [],
+        "type": "preflop"
+      },
+      {
+        "index": 68,
+        "score": 100,
+        "issues": [],
+        "type": "position"
+      },
+      {
+        "index": 69,
+        "score": 100,
+        "issues": [],
+        "type": "ev"
+      },
+      {
+        "index": 70,
+        "score": 100,
+        "issues": [],
+        "type": "bluff"
+      },
+      {
+        "index": 71,
+        "score": 100,
+        "issues": [],
+        "type": "style"
+      },
+      {
+        "index": 72,
+        "score": 100,
+        "issues": [],
+        "type": "outs"
+      },
+      {
+        "index": 73,
+        "score": 100,
+        "issues": [],
+        "type": "equity"
+      },
+      {
+        "index": 74,
+        "score": 100,
+        "issues": [],
+        "type": "odds"
+      },
+      {
+        "index": 75,
+        "score": 100,
+        "issues": [],
+        "type": "preflop"
+      },
+      {
+        "index": 76,
+        "score": 100,
+        "issues": [],
+        "type": "position"
+      },
+      {
+        "index": 77,
+        "score": 100,
+        "issues": [],
+        "type": "ev"
+      },
+      {
+        "index": 78,
+        "score": 100,
+        "issues": [],
+        "type": "bluff"
+      },
+      {
+        "index": 79,
+        "score": 100,
+        "issues": [],
+        "type": "style"
+      },
+      {
+        "index": 80,
+        "score": 100,
+        "issues": [],
+        "type": "outs"
+      },
+      {
+        "index": 81,
+        "score": 100,
+        "issues": [],
+        "type": "equity"
+      },
+      {
+        "index": 82,
+        "score": 100,
+        "issues": [],
+        "type": "odds"
+      },
+      {
+        "index": 83,
+        "score": 100,
+        "issues": [],
+        "type": "preflop"
+      },
+      {
+        "index": 84,
+        "score": 100,
+        "issues": [],
+        "type": "position"
+      },
+      {
+        "index": 85,
+        "score": 100,
+        "issues": [],
+        "type": "ev"
+      },
+      {
+        "index": 86,
+        "score": 100,
+        "issues": [],
+        "type": "bluff"
+      },
+      {
+        "index": 87,
+        "score": 100,
+        "issues": [],
+        "type": "style"
+      },
+      {
+        "index": 88,
+        "score": 100,
+        "issues": [],
+        "type": "outs"
+      },
+      {
+        "index": 89,
+        "score": 100,
+        "issues": [],
+        "type": "equity"
+      },
+      {
+        "index": 90,
+        "score": 100,
+        "issues": [],
+        "type": "odds"
+      },
+      {
+        "index": 91,
+        "score": 100,
+        "issues": [],
+        "type": "preflop"
+      },
+      {
+        "index": 92,
+        "score": 100,
+        "issues": [],
+        "type": "position"
+      },
+      {
+        "index": 93,
+        "score": 100,
+        "issues": [],
+        "type": "ev"
+      },
+      {
+        "index": 94,
+        "score": 100,
+        "issues": [],
+        "type": "bluff"
+      },
+      {
+        "index": 95,
+        "score": 100,
+        "issues": [],
+        "type": "style"
+      },
+      {
+        "index": 96,
+        "score": 100,
+        "issues": [],
+        "type": "outs"
+      },
+      {
+        "index": 97,
+        "score": 100,
+        "issues": [],
+        "type": "equity"
+      },
+      {
+        "index": 98,
+        "score": 100,
+        "issues": [],
+        "type": "odds"
+      },
+      {
+        "index": 99,
+        "score": 100,
+        "issues": [],
+        "type": "preflop"
+      }
+    ]
+  },
+  "duplicates": {
+    "exactGroups": [
+      [
+        15,
+        95
+      ],
+      [
+        23,
+        87
+      ]
+    ],
+    "nearPairs": [
+      {
+        "i": 6,
+        "j": 22,
+        "similarity": 1
+      },
+      {
+        "i": 15,
+        "j": 95,
+        "similarity": 1
+      },
+      {
+        "i": 19,
+        "j": 51,
+        "similarity": 1
+      },
+      {
+        "i": 23,
+        "j": 87,
+        "similarity": 1
+      },
+      {
+        "i": 43,
+        "j": 99,
+        "similarity": 0.905
+      },
+      {
+        "i": 91,
+        "j": 99,
+        "similarity": 0.905
+      },
+      {
+        "i": 30,
+        "j": 78,
+        "similarity": 0.88
+      },
+      {
+        "i": 11,
+        "j": 35,
+        "similarity": 0.859
+      },
+      {
+        "i": 11,
+        "j": 99,
+        "similarity": 0.859
+      }
+    ]
+  },
+  "questions": [
+    {
+      "index": 1,
+      "type": "outs",
+      "difficulty": "medium",
+      "question": "你有多少张补牌？",
+      "situation": "9人桌转牌圈，你在 CO 位置，筹码 25BB。底池 10BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "6 张"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "5 张"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "3 张"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "formula_outs"
+      }
+    },
+    {
+      "index": 2,
+      "type": "equity",
+      "difficulty": "hard",
+      "question": "在9人桌中，你的胜率大约在哪个范围？",
+      "situation": "9人桌翻牌圈，你在 HJ 位置，筹码 80BB。底池 12BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "0%~10%"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "60%~70%"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "10%~20%"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "formula_equity"
+      }
+    },
+    {
+      "index": 3,
+      "type": "odds",
+      "difficulty": "easy",
+      "question": "在暂不考虑隐含赔率的前提下，你此次跟注的直接底池赔率比值是多少？",
+      "situation": "2人桌，你的绝对位置是 MP。到达转牌圈，底池刚好凑满 30BB，遭遇某对手主动下注 5BB。\n\n你的牌型是【Q 高牌 + 对子听牌】（听 6 张补牌：对子听牌）。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "7.0 : 1"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "1.5 : 1"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "4.0 : 1"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "formula_odds"
+      }
+    },
+    {
+      "index": 4,
+      "type": "preflop",
+      "difficulty": "easy",
+      "question": "你目前的最佳行动是？",
+      "situation": "9人桌翻前，你在 BB 位置，筹码 25BB。\n\n局面上，前位有玩家率先加注到 3BB，其他人弃牌，现在轮到你行动。",
+      "options": [
+        {
+          "id": "all-in / 全下",
+          "label": "A",
+          "value": "All-in / 全下"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "B",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "C",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "D",
+          "value": "Fold / 弃牌"
+        }
+      ],
+      "correctOptionId": "fold / 弃牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "3-bet / 反加",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 5,
+      "type": "position",
+      "difficulty": "medium",
+      "question": "拿到 87s，你在 MP 位置的最佳行动是？",
+      "situation": "6人桌翻前，你在 MP 位置，筹码 25BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "raise / 加注",
+          "label": "A",
+          "value": "Raise / 加注"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "B",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "C",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "D",
+          "value": "Fold / 弃牌"
+        }
+      ],
+      "correctOptionId": "raise / 加注",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "call / 跟注",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 6,
+      "type": "ev",
+      "difficulty": "easy",
+      "question": "根据底池赔率与计算出的手牌胜率，面对这个下注你的正确决策是？",
+      "situation": "9人桌翻牌圈，你在 MP 位置，筹码 100BB。\n\n底池 10BB，对手下注 8BB。你需要跟注 8BB 才能继续。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "弃牌 (-EV)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "加注 (Semi-Bluff)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "跟注 (+EV)"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 7,
+      "type": "bluff",
+      "difficulty": "easy",
+      "question": "在当前牌面与位置下，你的最优行动是？",
+      "situation": "2人桌翻牌圈，你在 SB 位置，筹码 100BB。\n\n底池 15BB，轮到你行动。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "弃牌"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "诈唬下注"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "价值下注"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "半诈唬下注"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 8,
+      "type": "style",
+      "difficulty": "easy",
+      "question": "面对跟注站在河牌的过牌，你应该？",
+      "situation": "【建立对手画像】\n松被动 / 跟注站 (Calling Station)\n特征：几乎什么牌都跟注，翻前很少加注，翻后只会过牌-跟注。几乎从不诈唬，但也不会主动弃牌。\n\n【对抗场景】\n你手持【K♠ 10♠】，翻牌面是 10♦ 6♥ 3♣。你击中了顶对。底池 12BB，你下注 8BB，跟注站对手跟注。\n\n转牌发出 J♦，你再次下注 15BB，对手依然跟注。河牌发出 2♠，对手依然过牌。底池已有 58BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "弃牌放弃底池"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "过牌诱使他诈唬"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "最小下注试探"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "大额价值下注 (Value Bet)"
+        }
+      ],
+      "correctOptionId": "d",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 9,
+      "type": "outs",
+      "difficulty": "medium",
+      "question": "你有多少张补牌？",
+      "situation": "9人桌翻牌圈，你在 CO 位置，筹码 150BB。底池 5BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "5 张"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "4 张"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "2 张"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "formula_outs"
+      }
+    },
+    {
+      "index": 10,
+      "type": "equity",
+      "difficulty": "hard",
+      "question": "在9人桌中，你的胜率大约在哪个范围？",
+      "situation": "9人桌翻牌圈，你在 CO 位置，筹码 100BB。底池 5BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "0%~10%"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "10%~20%"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "50%~60%"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_equity"
+      }
+    },
+    {
+      "index": 11,
+      "type": "odds",
+      "difficulty": "hard",
+      "question": "在暂不考虑隐含赔率的前提下，你此次跟注的直接底池赔率比值是多少？",
+      "situation": "2人桌，你的绝对位置是 BB。到达转牌圈，底池刚好凑满 10BB，遭遇某对手主动下注 6BB。\n\n你的牌型是【K 高牌 + 对子听牌】（听 6 张补牌：对子听牌）。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "6.0 : 1"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "2.7 : 1"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "8.0 : 1"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_odds"
+      }
+    },
+    {
+      "index": 12,
+      "type": "preflop",
+      "difficulty": "easy",
+      "question": "你目前的最佳行动是？",
+      "situation": "9人桌翻前，你在 SB 位置，筹码 40BB。\n\n局面上，前位有玩家率先加注到 3BB，其他人弃牌，现在轮到你行动。",
+      "options": [
+        {
+          "id": "3-bet / 反加",
+          "label": "A",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "all-in / 全下",
+          "label": "B",
+          "value": "All-in / 全下"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "C",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "D",
+          "value": "Call / 跟注"
+        }
+      ],
+      "correctOptionId": "fold / 弃牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "3-bet / 反加",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 13,
+      "type": "position",
+      "difficulty": "medium",
+      "question": "拿到 KTs，你在 BB 位置的最佳行动是？",
+      "situation": "9人桌翻前，你在 BB 位置，筹码 80BB。\n\n前方玩家弃牌，小盲位（SB）平跟补齐了盲注（没有加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "fold / 弃牌",
+          "label": "A",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "raise / 加注",
+          "label": "B",
+          "value": "Raise / 加注"
+        },
+        {
+          "id": "check / 过牌",
+          "label": "C",
+          "value": "Check / 过牌"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "D",
+          "value": "Call / 跟注"
+        }
+      ],
+      "correctOptionId": "check / 过牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "check / 过牌",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 14,
+      "type": "ev",
+      "difficulty": "easy",
+      "question": "根据底池赔率与计算出的手牌胜率，面对这个下注你的正确决策是？",
+      "situation": "6人桌转牌圈，你在 CO 位置，筹码 100BB。\n\n底池 6BB，对手下注 12BB。你需要跟注 12BB 才能继续。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "跟注 (+EV)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "加注 (Semi-Bluff)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "弃牌 (-EV)"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 15,
+      "type": "bluff",
+      "difficulty": "hard",
+      "question": "在当前牌面与位置下，你的最优行动是？",
+      "situation": "6人桌翻牌圈，你在 MP 位置，筹码 60BB。\n\n底池 20BB，轮到你行动。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "过牌"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "弃牌"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "价值下注"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "半诈唬下注"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 16,
+      "type": "style",
+      "difficulty": "easy",
+      "question": "LAG 对手连续两条街施压，你手持 QQ（超对），此时你应当？",
+      "situation": "【建立对手画像】\n松凶 / 激进型 (LAG)\n特征：参与率较高且主动进攻。不像疯子那样无脑，LAG 打法有一定章法，擅长在听牌阶段施压和多条街诈唬。\n\n【对抗场景】\n你手持【Q♥ Q♠】在 UTG 加注，LAG 对手在 CO 位 3Bet 到 9BB。你跟注。翻牌面 J♣ 8♦ 5♠，你过牌，LAG 下注 2/3 底池。你跟注。\n\n转牌发出 3♣，你再次过牌。LAG 再次开枪，这次下注几乎是底池大小。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "跟注 (Call)，用强牌让他继续诈唬"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "弃牌 (Fold) 避免复杂局面"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "最小加注试图看河牌"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "全下 (All-in) 反击"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 17,
+      "type": "outs",
+      "difficulty": "medium",
+      "question": "你有多少张补牌？",
+      "situation": "9人桌转牌圈，你在 HJ 位置，筹码 100BB。底池 12BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "8 张"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "6 张"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "4 张"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_outs"
+      }
+    },
+    {
+      "index": 18,
+      "type": "equity",
+      "difficulty": "medium",
+      "question": "在6人桌中，你的胜率大约在哪个范围？",
+      "situation": "6人桌翻牌圈，你在 MP 位置，筹码 100BB。底池 7BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "10%~20%"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "60%~70%"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "0%~10%"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "formula_equity"
+      }
+    },
+    {
+      "index": 19,
+      "type": "odds",
+      "difficulty": "easy",
+      "question": "在暂不考虑隐含赔率的前提下，你此次跟注的直接底池赔率比值是多少？",
+      "situation": "9人桌，你的绝对位置是 MP。到达翻牌圈，底池刚好凑满 25BB，遭遇某对手主动下注 5BB。\n\n你的牌型是【A 高牌 + 卡顺听牌】（听 4 张补牌：卡顺听牌）。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "4.0 : 1"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "7.0 : 1"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "6.0 : 1"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "formula_odds"
+      }
+    },
+    {
+      "index": 20,
+      "type": "preflop",
+      "difficulty": "easy",
+      "question": "你目前的最佳行动是？",
+      "situation": "9人桌翻前，你在 CO 位置，筹码 80BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "call / 跟注",
+          "label": "A",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "all-in / 全下",
+          "label": "B",
+          "value": "All-in / 全下"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "C",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "raise / 加注",
+          "label": "D",
+          "value": "Raise / 加注"
+        }
+      ],
+      "correctOptionId": "fold / 弃牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "all-in / 全下",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 21,
+      "type": "position",
+      "difficulty": "medium",
+      "question": "拿到 77，你在 SB 位置的最佳行动是？",
+      "situation": "6人桌翻前，你在 SB 位置，筹码 40BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "raise / 加注",
+          "label": "A",
+          "value": "Raise / 加注"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "B",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "C",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "D",
+          "value": "Fold / 弃牌"
+        }
+      ],
+      "correctOptionId": "raise / 加注",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "3-bet / 反加",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 22,
+      "type": "ev",
+      "difficulty": "easy",
+      "question": "根据底池赔率与计算出的手牌胜率，面对这个下注你的正确决策是？",
+      "situation": "9人桌转牌圈，你在 UTG 位置，筹码 25BB。\n\n底池 12BB，对手下注 6BB。你需要跟注 6BB 才能继续。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "加注 (Semi-Bluff)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "弃牌 (-EV)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "跟注 (+EV)"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 23,
+      "type": "bluff",
+      "difficulty": "hard",
+      "question": "在当前牌面与位置下，你的最优行动是？",
+      "situation": "2人桌翻牌圈，你在 SB 位置，筹码 100BB。\n\n底池 15BB，轮到你行动。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "过牌"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "价值下注"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "半诈唬下注"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "诈唬下注"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 24,
+      "type": "style",
+      "difficulty": "easy",
+      "question": "面对一个典型的跟注站，此时你的最佳策略是？",
+      "situation": "【建立对手画像】\n松被动 / 跟注站 (Calling Station)\n特征：非常喜欢看翻牌，什么牌都舍不得弃。极少主动加注，但面对别人的下注他总是平跟（Call）看下一张牌。\n\n【对抗场景】\n你手持【A♥ K♥】，在一个 A♦ 7♣ 2♠ 的干燥翻牌面。由于你翻前 3Bet，底池已经有 25BB。对手（跟注站）向你过牌。你下注 12BB，他果断跟注。\n\n转牌是一张 4♠，毫无帮助。对手再次过牌。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "做极小的下注诱使他诈唬"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "继续价值下注 (Value Bet)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "全下 (All-in) 试图超池剥削"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "过牌控制底池 (Pot Control)"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 25,
+      "type": "outs",
+      "difficulty": "medium",
+      "question": "你有多少张补牌？",
+      "situation": "2人桌转牌圈，你在 BB 位置，筹码 25BB。底池 20BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "7 张"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "4 张"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "6 张"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "formula_outs"
+      }
+    },
+    {
+      "index": 26,
+      "type": "equity",
+      "difficulty": "hard",
+      "question": "在9人桌中，你的胜率大约在哪个范围？",
+      "situation": "9人桌翻牌圈，你在 BB 位置，筹码 80BB。底池 12BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "40%~50%"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "20%~30%"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "30%~40%"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 27,
+      "type": "odds",
+      "difficulty": "medium",
+      "question": "为了判断强买后续的听牌到底划不划算，请算出你当前的底池赔率：",
+      "situation": "你坐在 2人桌的 HJ 位，后手深度 60BB。进入翻牌圈后你击中了【一对6 + 2张高牌配对】，手里一共有 6 张能让你提升牌力的重磅补牌（比如 2张高牌配对）。\n\n目前底池里已经有了 15BB 的死钱，这时前位的对手突然开枪，下注了 6BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "2.0 : 1"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "1.5 : 1"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "3.5 : 1"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "formula_odds"
+      }
+    },
+    {
+      "index": 28,
+      "type": "preflop",
+      "difficulty": "easy",
+      "question": "你目前的最佳行动是？",
+      "situation": "9人桌翻前，你在 UTG 位置，筹码 25BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "all-in / 全下",
+          "label": "A",
+          "value": "All-in / 全下"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "B",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "C",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "D",
+          "value": "Fold / 弃牌"
+        }
+      ],
+      "correctOptionId": "fold / 弃牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "all-in / 全下",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 29,
+      "type": "position",
+      "difficulty": "medium",
+      "question": "拿到 A8o，你在 CO 位置的最佳行动是？",
+      "situation": "6人桌翻前，你在 CO 位置，筹码 25BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "raise / 加注",
+          "label": "A",
+          "value": "Raise / 加注"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "B",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "C",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "D",
+          "value": "Fold / 弃牌"
+        }
+      ],
+      "correctOptionId": "raise / 加注",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "call / 跟注",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 30,
+      "type": "ev",
+      "difficulty": "medium",
+      "question": "根据底池赔率与计算出的手牌胜率，面对这个下注你的正确决策是？",
+      "situation": "2人桌翻牌圈，你在 MP 位置，筹码 25BB。\n\n底池 12BB，对手下注 12BB。你需要跟注 12BB 才能继续。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "加注 (Semi-Bluff)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "跟注 (+EV)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "弃牌 (-EV)"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 31,
+      "type": "bluff",
+      "difficulty": "hard",
+      "question": "在当前牌面与位置下，你的最优行动是？",
+      "situation": "6人桌翻牌圈，你在 SB 位置，筹码 25BB。\n\n底池 15BB，轮到你行动。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "过牌"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "半诈唬下注"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "价值下注"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "诈唬下注"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 32,
+      "type": "style",
+      "difficulty": "easy",
+      "question": "面对疯子的 5Bet All-in，你此时应该怎么做？",
+      "situation": "【建立对手画像】\n疯子 / 松凶 (Maniac)\n特征：几乎每手都参与翻前，翻后开枪频率极高，下注尺度夸张。做超池诈唬是家常便饭。\n\n【对抗场景】\n你手持【A♠ A♦】在 CO 位置翻前加注，疯子在大盲位 3Bet 到 12BB，你 4Bet 到 28BB。疯子直接 5Bet All-in（总共 95BB）！\n\n你知道这位疯子在翻前几乎什么牌都会反加。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "再想想，然后还是弃牌"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "迅速跟注 All-in (Snap Call)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "弃牌 (Fold) 担心对手有 KK+"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "过牌等下一手"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 33,
+      "type": "outs",
+      "difficulty": "medium",
+      "question": "你有多少张补牌？",
+      "situation": "2人桌转牌圈，你在 HJ 位置，筹码 25BB。底池 20BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "1 张"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "7 张"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "4 张"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "formula_outs"
+      }
+    },
+    {
+      "index": 34,
+      "type": "equity",
+      "difficulty": "easy",
+      "question": "在2人桌中，你的胜率大约在哪个范围？",
+      "situation": "2人桌翻牌圈，你在 HJ 位置，筹码 150BB。底池 20BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "50%~60%"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "20%~30%"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "10%~20%"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": false,
+        "strategy": "formula_equity"
+      }
+    },
+    {
+      "index": 35,
+      "type": "odds",
+      "difficulty": "hard",
+      "question": "在暂不考虑隐含赔率的前提下，你此次跟注的直接底池赔率比值是多少？",
+      "situation": "9人桌，你的绝对位置是 MP。到达转牌圈，底池刚好凑满 30BB，遭遇某对手主动下注 15BB。\n\n你的牌型是【A 高牌 + 对子听牌】（听 6 张补牌：对子听牌）。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "3.0 : 1"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "5.0 : 1"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "6.0 : 1"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "formula_odds"
+      }
+    },
+    {
+      "index": 36,
+      "type": "preflop",
+      "difficulty": "easy",
+      "question": "你目前的最佳行动是？",
+      "situation": "9人桌翻前，你在 UTG 位置，筹码 40BB。\n\n局面上，前位有玩家率先加注到 3BB，其他人弃牌，现在轮到你行动。",
+      "options": [
+        {
+          "id": "fold / 弃牌",
+          "label": "A",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "B",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "all-in / 全下",
+          "label": "C",
+          "value": "All-in / 全下"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "D",
+          "value": "3-Bet / 反加"
+        }
+      ],
+      "correctOptionId": "fold / 弃牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "3-bet / 反加",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 37,
+      "type": "position",
+      "difficulty": "medium",
+      "question": "拿到 99，你在 HJ 位置的最佳行动是？",
+      "situation": "6人桌翻前，你在 HJ 位置，筹码 40BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "fold / 弃牌",
+          "label": "A",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "raise / 加注",
+          "label": "B",
+          "value": "Raise / 加注"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "C",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "D",
+          "value": "Call / 跟注"
+        }
+      ],
+      "correctOptionId": "raise / 加注",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "raise / 加注",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 38,
+      "type": "ev",
+      "difficulty": "medium",
+      "question": "根据底池赔率与计算出的手牌胜率，面对这个下注你的正确决策是？",
+      "situation": "6人桌转牌圈，你在 BTN 位置，筹码 100BB。\n\n底池 18BB，对手下注 12BB。你需要跟注 12BB 才能继续。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "加注 (Semi-Bluff)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "弃牌 (-EV)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "跟注 (+EV)"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 39,
+      "type": "bluff",
+      "difficulty": "hard",
+      "question": "在当前牌面与位置下，你的最优行动是？",
+      "situation": "6人桌翻牌圈，你在 MP 位置，筹码 25BB。\n\n底池 10BB，轮到你行动。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "过牌"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "半诈唬下注"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "弃牌"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "诈唬下注"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 40,
+      "type": "style",
+      "difficulty": "easy",
+      "question": "TAG 在翻牌 C-bet 后在转牌过牌，你应该如何应对？",
+      "situation": "【建立对手画像】\n紧凶 / 常客玩家 (TAG)\n特征：C-bet 频率适中，会在好牌面做频率性的持续下注，但在被跟注后会根据转牌纹理和对手类型调整。\n\n【对抗场景】\nTAG 常客在 UTG 加注到 3BB，你在 BTN 跟注。翻牌面 K♠ 8♦ 3♣（干燥牌面）。TAG 做了一个 2/3 底池的标准 C-bet，你跟注。\n\n转牌发出 2♥（又是一张空气牌）。TAG 突然过牌。你手持【Q♠ J♠】，完全没有击中。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "全下 (All-in) 用最大压力"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "跟注看河牌"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "过牌跟随，放弃底池"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "下注诈唬，代表大K或更强的牌"
+        }
+      ],
+      "correctOptionId": "d",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 41,
+      "type": "outs",
+      "difficulty": "medium",
+      "question": "你有多少张补牌？",
+      "situation": "9人桌翻牌圈，你在 UTG 位置，筹码 60BB。底池 12BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "4 张"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "7 张"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "6 张"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "formula_outs"
+      }
+    },
+    {
+      "index": 42,
+      "type": "equity",
+      "difficulty": "medium",
+      "question": "在6人桌中，你的胜率大约在哪个范围？",
+      "situation": "6人桌翻牌圈，你在 SB 位置，筹码 40BB。底池 5BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "80%~90%"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "10%~20%"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "30%~40%"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_equity"
+      }
+    },
+    {
+      "index": 43,
+      "type": "odds",
+      "difficulty": "hard",
+      "question": "为了判断强买后续的听牌到底划不划算，请算出你当前的底池赔率：",
+      "situation": "你坐在 9人桌的 CO 位，后手深度 60BB。进入转牌圈后你击中了【一对A + 暗三条听牌】，手里一共有 2 张能让你提升牌力的重磅补牌（比如 暗三条听牌）。\n\n目前底池里已经有了 8BB 的死钱，这时前位的对手突然开枪，下注了 10BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "4.0 : 1"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "1.8 : 1"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "7.0 : 1"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_odds"
+      }
+    },
+    {
+      "index": 44,
+      "type": "preflop",
+      "difficulty": "easy",
+      "question": "你目前的最佳行动是？",
+      "situation": "6人桌翻前，你在 BTN 位置，筹码 40BB。\n\n局面上，前位有玩家率先加注到 3BB，其他人弃牌，现在轮到你行动。",
+      "options": [
+        {
+          "id": "fold / 弃牌",
+          "label": "A",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "all-in / 全下",
+          "label": "B",
+          "value": "All-in / 全下"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "C",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "D",
+          "value": "3-Bet / 反加"
+        }
+      ],
+      "correctOptionId": "fold / 弃牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "all-in / 全下",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 45,
+      "type": "position",
+      "difficulty": "medium",
+      "question": "拿到 A9s，你在 UTG 位置的最佳行动是？",
+      "situation": "9人桌翻前，你在 UTG 位置，筹码 60BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "raise / 加注",
+          "label": "A",
+          "value": "Raise / 加注"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "B",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "C",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "D",
+          "value": "3-Bet / 反加"
+        }
+      ],
+      "correctOptionId": "raise / 加注",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "fold / 弃牌",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 46,
+      "type": "ev",
+      "difficulty": "easy",
+      "question": "根据底池赔率与计算出的手牌胜率，面对这个下注你的正确决策是？",
+      "situation": "6人桌翻牌圈，你在 HJ 位置，筹码 100BB。\n\n底池 20BB，对手下注 3BB。你需要跟注 3BB 才能继续。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "全下 (All-in)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "加注 (Semi-Bluff)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "跟注 (+EV)"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 47,
+      "type": "bluff",
+      "difficulty": "easy",
+      "question": "在当前牌面与位置下，你的最优行动是？",
+      "situation": "2人桌转牌圈，你在 BTN 位置，筹码 80BB。\n\n底池 15BB，轮到你行动。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "弃牌"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "过牌"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "诈唬下注"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "价值下注"
+        }
+      ],
+      "correctOptionId": "d",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "d",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 48,
+      "type": "style",
+      "difficulty": "easy",
+      "question": "面对一个极紧玩家罕见的 3Bet，你的最佳行动是？",
+      "situation": "【建立对手画像】\n岩石 / 极紧 (Nit / Rock)\n特征：翻前只玩超级强牌，翻后只在绝对有把握时下注。在牌桌上绝大多数时间都在弃牌。\n\n【对抗场景】\n6 人桌翻前，你在 CO 位加注到 2.5BB。这位平时几乎不参与翻前的岩石玩家（在 BTN 位）突然做了一个冰冷的 3Bet 到 8BB。\n\n你手持【A♠ J♠】。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "弃牌 (Fold)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "4Bet 试探性加注"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "跟注看翻牌"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "全下 (All-in) 测试他"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "d",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 49,
+      "type": "outs",
+      "difficulty": "medium",
+      "question": "你有多少张补牌？",
+      "situation": "6人桌翻牌圈，你在 CO 位置，筹码 100BB。底池 7BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "4 张"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "7 张"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "6 张"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "formula_outs"
+      }
+    },
+    {
+      "index": 50,
+      "type": "equity",
+      "difficulty": "medium",
+      "question": "在6人桌中，你的胜率大约在哪个范围？",
+      "situation": "6人桌翻牌圈，你在 SB 位置，筹码 80BB。底池 10BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "40%~50%"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "30%~40%"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "90%~100%"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_equity"
+      }
+    },
+    {
+      "index": 51,
+      "type": "odds",
+      "difficulty": "hard",
+      "question": "在暂不考虑隐含赔率的前提下，你此次跟注的直接底池赔率比值是多少？",
+      "situation": "2人桌，你的绝对位置是 CO。到达转牌圈，底池刚好凑满 8BB，遭遇某对手主动下注 15BB。\n\n你的牌型是【一对A + 对子听牌】（听 6 张补牌：对子听牌）。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "10.0 : 1"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "1.5 : 1"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "3.0 : 1"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_odds"
+      }
+    },
+    {
+      "index": 52,
+      "type": "preflop",
+      "difficulty": "easy",
+      "question": "你目前的最佳行动是？",
+      "situation": "9人桌翻前，你在 CO 位置，筹码 80BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "fold / 弃牌",
+          "label": "A",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "raise / 加注",
+          "label": "B",
+          "value": "Raise / 加注"
+        },
+        {
+          "id": "all-in / 全下",
+          "label": "C",
+          "value": "All-in / 全下"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "D",
+          "value": "Call / 跟注"
+        }
+      ],
+      "correctOptionId": "fold / 弃牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "raise / 加注",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 53,
+      "type": "position",
+      "difficulty": "medium",
+      "question": "拿到 ATo，你在 SB 位置的最佳行动是？",
+      "situation": "6人桌翻前，你在 SB 位置，筹码 25BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "fold / 弃牌",
+          "label": "A",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "raise / 加注",
+          "label": "B",
+          "value": "Raise / 加注"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "C",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "D",
+          "value": "3-Bet / 反加"
+        }
+      ],
+      "correctOptionId": "raise / 加注",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "3-bet / 反加",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 54,
+      "type": "ev",
+      "difficulty": "easy",
+      "question": "根据底池赔率与计算出的手牌胜率，面对这个下注你的正确决策是？",
+      "situation": "2人桌转牌圈，你在 BTN 位置，筹码 100BB。\n\n底池 12BB，对手下注 10BB。你需要跟注 10BB 才能继续。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "全下 (All-in)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "跟注 (+EV)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "弃牌 (-EV)"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 55,
+      "type": "bluff",
+      "difficulty": "hard",
+      "question": "在当前牌面与位置下，你的最优行动是？",
+      "situation": "2人桌转牌圈，你在 BTN 位置，筹码 25BB。\n\n底池 6BB，轮到你行动。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "半诈唬下注"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "过牌"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "价值下注"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "弃牌"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "d",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 56,
+      "type": "style",
+      "difficulty": "easy",
+      "question": "面对这位著名的岩石玩家的突然爆发，你的选择是？",
+      "situation": "【建立对手画像】\n岩石 / 极紧 (Nit / Rock)\n特征：打法极其保守，几乎只玩 AA/KK/QQ/AK。长时间弃牌，一旦主动下注或加注，牌力必定如泰山般坚固。\n\n【对抗场景】\n你手持【K♦ Q♦】，翻牌面是 Q♠ 9♥ 4♣。你击中了顶对好踢脚。你下注半池，这位一直沉默如冰的“岩石”玩家突然过牌-加注（Check-Raise）了你 3 倍！",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "全下 (All-in) 测试他到底多强"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "果断弃牌 (Fold)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "平跟 (Call) 看转牌有没有提升"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "反加回去 (3-Bet) 宣誓主权"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 57,
+      "type": "outs",
+      "difficulty": "medium",
+      "question": "你有多少张补牌？",
+      "situation": "9人桌翻牌圈，你在 CO 位置，筹码 40BB。底池 7BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "5 张"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "6 张"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "9 张"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_outs"
+      }
+    },
+    {
+      "index": 58,
+      "type": "equity",
+      "difficulty": "easy",
+      "question": "在2人桌中，你的胜率大约在哪个范围？",
+      "situation": "2人桌翻牌圈，你在 HJ 位置，筹码 80BB。底池 10BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "40%~50%"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "20%~30%"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "60%~70%"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_equity"
+      }
+    },
+    {
+      "index": 59,
+      "type": "odds",
+      "difficulty": "hard",
+      "question": "面对下注，在决定是否要跟注去追牌前，请先计算你目前获得的底池赔率是多少？",
+      "situation": "2人桌转牌圈，你在 CO 位置，筹码 100BB。你当前的牌型为【一对5 + 1张高牌配对】并拥有 6 张补牌（如 1张高牌配对 等）。\n\n此时底池共有 15BB，对手向你下注了 15BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "3.5 : 1"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "2.0 : 1"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "4.0 : 1"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_odds"
+      }
+    },
+    {
+      "index": 60,
+      "type": "preflop",
+      "difficulty": "easy",
+      "question": "你目前的最佳行动是？",
+      "situation": "9人桌翻前，你在 BB 位置，筹码 80BB。\n\n前方玩家弃牌，小盲位（SB）平跟补齐了盲注（没有加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "fold / 弃牌",
+          "label": "A",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "B",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "check / 过牌",
+          "label": "C",
+          "value": "Check / 过牌"
+        },
+        {
+          "id": "raise / 加注",
+          "label": "D",
+          "value": "Raise / 加注"
+        }
+      ],
+      "correctOptionId": "check / 过牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "check / 过牌",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 61,
+      "type": "position",
+      "difficulty": "medium",
+      "question": "拿到 66，你在 SB 位置的最佳行动是？",
+      "situation": "6人桌翻前，你在 SB 位置，筹码 100BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "raise / 加注",
+          "label": "A",
+          "value": "Raise / 加注"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "B",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "C",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "D",
+          "value": "Fold / 弃牌"
+        }
+      ],
+      "correctOptionId": "raise / 加注",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "fold / 弃牌",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 62,
+      "type": "ev",
+      "difficulty": "easy",
+      "question": "根据底池赔率与计算出的手牌胜率，面对这个下注你的正确决策是？",
+      "situation": "9人桌翻牌圈，你在 SB 位置，筹码 80BB。\n\n底池 8BB，对手下注 3BB。你需要跟注 3BB 才能继续。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "全下 (All-in)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "跟注 (+EV)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "弃牌 (-EV)"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 63,
+      "type": "bluff",
+      "difficulty": "hard",
+      "question": "在当前牌面与位置下，你的最优行动是？",
+      "situation": "6人桌转牌圈，你在 SB 位置，筹码 25BB。\n\n底池 10BB，轮到你行动。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "诈唬下注"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "过牌"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "价值下注"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "半诈唬下注"
+        }
+      ],
+      "correctOptionId": "d",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 64,
+      "type": "style",
+      "difficulty": "easy",
+      "question": "新手鱼玩家的过牌-加注通常代表什么？你应该如何应对？",
+      "situation": "【建立对手画像】\n鱼 / 新手型 (Passive Fish)\n特征：不了解位置概念，翻前参与率高但很少加注。翻后下注逻辑混乱，有时拿强牌过牌，弱牌下注。\n\n【对抗场景】\n鱼型玩家在 UTG 平跟(Limp)，你在 BTN 手持【A♦ 10♦】加注到 4BB 隔离他。只有他跟注。翻牌面 A♣ 7♠ 5♦。鱼型玩家过牌。\n\n你下注 1/2 底池，他过牌-加注到 3 倍你的下注！",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "全下 (All-in) 测试他"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "立刻弃牌 (Fold)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "谨慎跟注 (Call)"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "反加回去 (Re-raise) 试探"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "d",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 65,
+      "type": "outs",
+      "difficulty": "medium",
+      "question": "你有多少张补牌？",
+      "situation": "2人桌转牌圈，你在 BB 位置，筹码 60BB。底池 15BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "8 张"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "7 张"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "6 张"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "formula_outs"
+      }
+    },
+    {
+      "index": 66,
+      "type": "equity",
+      "difficulty": "easy",
+      "question": "在2人桌中，你的胜率大约在哪个范围？",
+      "situation": "2人桌翻牌圈，你在 CO 位置，筹码 25BB。底池 12BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "80%~90%"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "40%~50%"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "60%~70%"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "formula_equity"
+      }
+    },
+    {
+      "index": 67,
+      "type": "odds",
+      "difficulty": "medium",
+      "question": "面对下注，在决定是否要跟注去追牌前，请先计算你目前获得的底池赔率是多少？",
+      "situation": "9人桌转牌圈，你在 MP 位置，筹码 150BB。你当前的牌型为【一对A + 卡顺听牌】并拥有 4 张补牌（如 卡顺听牌 等）。\n\n此时底池共有 25BB，对手向你下注了 10BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "3.5 : 1"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "7.0 : 1"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "2.0 : 1"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "formula_odds"
+      }
+    },
+    {
+      "index": 68,
+      "type": "preflop",
+      "difficulty": "easy",
+      "question": "你目前的最佳行动是？",
+      "situation": "6人桌翻前，你在 BB 位置，筹码 40BB。\n\n前方玩家弃牌，小盲位（SB）平跟补齐了盲注（没有加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "check / 过牌",
+          "label": "A",
+          "value": "Check / 过牌"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "B",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "all-in / 全下",
+          "label": "C",
+          "value": "All-in / 全下"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "D",
+          "value": "Call / 跟注"
+        }
+      ],
+      "correctOptionId": "check / 过牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "check / 过牌",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 69,
+      "type": "position",
+      "difficulty": "easy",
+      "question": "拿到 T9s，你在 BTN 位置的最佳行动是？",
+      "situation": "6人桌翻前，你在 BTN 位置，筹码 40BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "3-bet / 反加",
+          "label": "A",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "raise / 加注",
+          "label": "B",
+          "value": "Raise / 加注"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "C",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "D",
+          "value": "Fold / 弃牌"
+        }
+      ],
+      "correctOptionId": "raise / 加注",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "call / 跟注",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 70,
+      "type": "ev",
+      "difficulty": "easy",
+      "question": "根据底池赔率与计算出的手牌胜率，面对这个下注你的正确决策是？",
+      "situation": "2人桌翻牌圈，你在 BTN 位置，筹码 100BB。\n\n底池 18BB，对手下注 12BB。你需要跟注 12BB 才能继续。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "弃牌 (-EV)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "全下 (All-in)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "跟注 (+EV)"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 71,
+      "type": "bluff",
+      "difficulty": "hard",
+      "question": "在当前牌面与位置下，你的最优行动是？",
+      "situation": "6人桌转牌圈，你在 UTG 位置，筹码 60BB。\n\n底池 6BB，轮到你行动。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "过牌"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "诈唬下注"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "弃牌"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "半诈唬下注"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 72,
+      "type": "style",
+      "difficulty": "easy",
+      "question": "意识到这是一个利用位置常规尝试偷盲的举动，面对 TAG 常客，A4s 是一个用于（  ）的完美牌型？",
+      "situation": "【建立对手画像】\n紧凶 / 常客玩家 (TAG)\n特征：纪律严明，只在前位玩强牌，但在后位擅长利用位置优势偷盲。翻后懂得 C-bet 和适机诈唬。\n\n【对抗场景】\n你手持【A♣ 4♣】在大盲位（BB）。全部弃牌到按钮位（BTN），那位技术稳健的 TAG 常客做了一个标准的 2.5BB 极小加注试探。你前面没有其他玩家。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "老实平跟 (Call) 等翻牌"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "轻 3Bet 隔离/反偷盲 (Light 3-Bet)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "认为自己太弱直接弃牌 (Fold)"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "无脑推 All-in (Showhand)"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "d",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 73,
+      "type": "outs",
+      "difficulty": "medium",
+      "question": "你有多少张补牌？",
+      "situation": "9人桌翻牌圈，你在 HJ 位置，筹码 150BB。底池 5BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "9 张"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "6 张"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "5 张"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_outs"
+      }
+    },
+    {
+      "index": 74,
+      "type": "equity",
+      "difficulty": "easy",
+      "question": "在2人桌中，你的胜率大约在哪个范围？",
+      "situation": "2人桌翻牌圈，你在 MP 位置，筹码 100BB。底池 20BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "40%~50%"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "20%~30%"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "80%~90%"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "formula_equity"
+      }
+    },
+    {
+      "index": 75,
+      "type": "odds",
+      "difficulty": "hard",
+      "question": "为了判断强买后续的听牌到底划不划算，请算出你当前的底池赔率：",
+      "situation": "你坐在 9人桌的 MP 位，后手深度 150BB。进入翻牌圈后你击中了【J 高牌 + 2张高牌配对】，手里一共有 6 张能让你提升牌力的重磅补牌（比如 2张高牌配对）。\n\n目前底池里已经有了 15BB 的死钱，这时前位的对手突然开枪，下注了 10BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "2.5 : 1"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "4.5 : 1"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "1.5 : 1"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "formula_odds"
+      }
+    },
+    {
+      "index": 76,
+      "type": "preflop",
+      "difficulty": "easy",
+      "question": "你目前的最佳行动是？",
+      "situation": "6人桌翻前，你在 UTG 位置，筹码 40BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "3-bet / 反加",
+          "label": "A",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "all-in / 全下",
+          "label": "B",
+          "value": "All-in / 全下"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "C",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "D",
+          "value": "Fold / 弃牌"
+        }
+      ],
+      "correctOptionId": "fold / 弃牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "all-in / 全下",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 77,
+      "type": "position",
+      "difficulty": "medium",
+      "question": "拿到 87s，你在 MP 位置的最佳行动是？",
+      "situation": "9人桌翻前，你在 MP 位置，筹码 40BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "raise / 加注",
+          "label": "A",
+          "value": "Raise / 加注"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "B",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "C",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "D",
+          "value": "Call / 跟注"
+        }
+      ],
+      "correctOptionId": "raise / 加注",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "fold / 弃牌",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 78,
+      "type": "ev",
+      "difficulty": "easy",
+      "question": "根据底池赔率与计算出的手牌胜率，面对这个下注你的正确决策是？",
+      "situation": "9人桌转牌圈，你在 UTG 位置，筹码 25BB。\n\n底池 10BB，对手下注 5BB。你需要跟注 5BB 才能继续。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "跟注 (+EV)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "全下 (All-in)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "弃牌 (-EV)"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 79,
+      "type": "bluff",
+      "difficulty": "hard",
+      "question": "在当前牌面与位置下，你的最优行动是？",
+      "situation": "6人桌翻牌圈，你在 SB 位置，筹码 25BB。\n\n底池 6BB，轮到你行动。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "弃牌"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "半诈唬下注"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "价值下注"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "过牌"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 80,
+      "type": "style",
+      "difficulty": "easy",
+      "question": "面对一个疯狂且极度激进的对手，这手牌你目前的基调应该是？",
+      "situation": "【建立对手画像】\n疯子 / 松凶 (Maniac)\n特征：VPIP/PFR 极高，拿到任何牌都可能加注、3Bet，翻后下注频率夸张，经常做无脑的超池诈唬。\n\n【对抗场景】\n你手持【J♠ J♣】，在按钮位（BTN）。翻前，这位“疯子”玩家在小盲位（SB）直接做了一个 4 倍的大尺度 3Bet。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "弃牌 (Fold) 避免高方差"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "平跟 (Call) 设下陷阱，准备在翻后抓他的诈唬"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "必定 4Bet All-in 强打"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "最小加注 (Min-click) 挑衅他"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 81,
+      "type": "outs",
+      "difficulty": "medium",
+      "question": "你有多少张补牌？",
+      "situation": "9人桌转牌圈，你在 SB 位置，筹码 25BB。底池 20BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "6 张"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "9 张"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "7 张"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "formula_outs"
+      }
+    },
+    {
+      "index": 82,
+      "type": "equity",
+      "difficulty": "medium",
+      "question": "在6人桌中，你的胜率大约在哪个范围？",
+      "situation": "6人桌翻牌圈，你在 BTN 位置，筹码 60BB。底池 5BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "40%~50%"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "0%~10%"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "20%~30%"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_equity"
+      }
+    },
+    {
+      "index": 83,
+      "type": "odds",
+      "difficulty": "hard",
+      "question": "如果你选择强势跟注看下一张牌，你需要面临的底池赔率是多少？",
+      "situation": "盲注级别不限，这是一张标准的 9 人桌。你在 UTG 位，转牌圈发出后你在听【一对5 + ♠️ 同花听牌 + 双面顺子听牌】（共 15 张补牌，如 ♠️ 同花听牌 + 双面顺子听牌）。\n\n底池经过积累达到了 15BB，某位凶悍的对手试图用 8BB 的下注把你打跑。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "10.0 : 1"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "2.9 : 1"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "2.0 : 1"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_odds"
+      }
+    },
+    {
+      "index": 84,
+      "type": "preflop",
+      "difficulty": "easy",
+      "question": "你目前的最佳行动是？",
+      "situation": "9人桌翻前，你在 MP 位置，筹码 100BB。\n\n局面上，前位有玩家率先加注到 3BB，其他人弃牌，现在轮到你行动。",
+      "options": [
+        {
+          "id": "fold / 弃牌",
+          "label": "A",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "B",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "C",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "all-in / 全下",
+          "label": "D",
+          "value": "All-in / 全下"
+        }
+      ],
+      "correctOptionId": "fold / 弃牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "call / 跟注",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 85,
+      "type": "position",
+      "difficulty": "medium",
+      "question": "拿到 KJo，你在 SB 位置的最佳行动是？",
+      "situation": "9人桌翻前，你在 SB 位置，筹码 40BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "3-bet / 反加",
+          "label": "A",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "B",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "C",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "raise / 加注",
+          "label": "D",
+          "value": "Raise / 加注"
+        }
+      ],
+      "correctOptionId": "raise / 加注",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "3-bet / 反加",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 86,
+      "type": "ev",
+      "difficulty": "hard",
+      "question": "根据底池赔率与计算出的手牌胜率，面对这个下注你的正确决策是？",
+      "situation": "6人桌转牌圈，你在 SB 位置，筹码 100BB。\n\n底池 15BB，对手下注 12BB。你需要跟注 12BB 才能继续。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "弃牌 (-EV)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "跟注 (+EV)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "加注 (Semi-Bluff)"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 87,
+      "type": "bluff",
+      "difficulty": "hard",
+      "question": "在当前牌面与位置下，你的最优行动是？",
+      "situation": "6人桌翻牌圈，你在 HJ 位置，筹码 80BB。\n\n底池 20BB，轮到你行动。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "半诈唬下注"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "价值下注"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "诈唬下注"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "过牌"
+        }
+      ],
+      "correctOptionId": "d",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 88,
+      "type": "style",
+      "difficulty": "easy",
+      "question": "面对一个典型的跟注站，此时你的最佳策略是？",
+      "situation": "【建立对手画像】\n松被动 / 跟注站 (Calling Station)\n特征：非常喜欢看翻牌，什么牌都舍不得弃。极少主动加注，但面对别人的下注他总是平跟（Call）看下一张牌。\n\n【对抗场景】\n你手持【A♥ K♥】，在一个 A♦ 7♣ 2♠ 的干燥翻牌面。由于你翻前 3Bet，底池已经有 25BB。对手（跟注站）向你过牌。你下注 12BB，他果断跟注。\n\n转牌是一张 4♠，毫无帮助。对手再次过牌。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "继续价值下注 (Value Bet)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "全下 (All-in) 试图超池剥削"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "做极小的下注诱使他诈唬"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "过牌控制底池 (Pot Control)"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 89,
+      "type": "outs",
+      "difficulty": "easy",
+      "question": "你有多少张补牌？",
+      "situation": "9人桌翻牌圈，你在 SB 位置，筹码 25BB。底池 7BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "7 张"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "8 张"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "9 张"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_outs"
+      }
+    },
+    {
+      "index": 90,
+      "type": "equity",
+      "difficulty": "easy",
+      "question": "在2人桌中，你的胜率大约在哪个范围？",
+      "situation": "2人桌翻牌圈，你在 SB 位置，筹码 25BB。底池 20BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "70%~80%"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "90%~100%"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "30%~40%"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 91,
+      "type": "odds",
+      "difficulty": "medium",
+      "question": "面对下注，在决定是否要跟注去追牌前，请先计算你目前获得的底池赔率是多少？",
+      "situation": "2人桌转牌圈，你在 CO 位置，筹码 80BB。你当前的牌型为【三条K + 提升至明三条】并拥有 4 张补牌（如 提升至明三条 等）。\n\n此时底池共有 30BB，对手向你下注了 10BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "4.0 : 1"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "2.5 : 1"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "7.0 : 1"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "formula_odds"
+      }
+    },
+    {
+      "index": 92,
+      "type": "preflop",
+      "difficulty": "easy",
+      "question": "你目前的最佳行动是？",
+      "situation": "9人桌翻前，你在 BTN 位置，筹码 80BB。\n\n局面上，前位有玩家率先加注到 3BB，其他人弃牌，现在轮到你行动。",
+      "options": [
+        {
+          "id": "all-in / 全下",
+          "label": "A",
+          "value": "All-in / 全下"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "B",
+          "value": "3-Bet / 反加"
+        },
+        {
+          "id": "call / 跟注",
+          "label": "C",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "D",
+          "value": "Fold / 弃牌"
+        }
+      ],
+      "correctOptionId": "fold / 弃牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "3-bet / 反加",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 93,
+      "type": "position",
+      "difficulty": "medium",
+      "question": "拿到 A8o，你在 HJ 位置的最佳行动是？",
+      "situation": "9人桌翻前，你在 HJ 位置，筹码 25BB。\n\n前方在此之前全部弃牌（无人加注），现在轮到你行动。",
+      "options": [
+        {
+          "id": "call / 跟注",
+          "label": "A",
+          "value": "Call / 跟注"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "B",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "raise / 加注",
+          "label": "C",
+          "value": "Raise / 加注"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "D",
+          "value": "3-Bet / 反加"
+        }
+      ],
+      "correctOptionId": "fold / 弃牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "call / 跟注",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 94,
+      "type": "ev",
+      "difficulty": "easy",
+      "question": "根据底池赔率与计算出的手牌胜率，面对这个下注你的正确决策是？",
+      "situation": "2人桌翻牌圈，你在 CO 位置，筹码 60BB。\n\n底池 6BB，对手下注 4BB。你需要跟注 4BB 才能继续。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "全下 (All-in)"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "跟注 (+EV)"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "弃牌 (-EV)"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": false,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 95,
+      "type": "bluff",
+      "difficulty": "hard",
+      "question": "在当前牌面与位置下，你的最优行动是？",
+      "situation": "6人桌转牌圈，你在 SB 位置，筹码 40BB。\n\n底池 20BB，轮到你行动。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "过牌"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "弃牌"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "半诈唬下注"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "诈唬下注"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 96,
+      "type": "style",
+      "difficulty": "easy",
+      "question": "LAG 对手连续两条街施压，你手持 QQ（超对），此时你应当？",
+      "situation": "【建立对手画像】\n松凶 / 激进型 (LAG)\n特征：参与率较高且主动进攻。不像疯子那样无脑，LAG 打法有一定章法，擅长在听牌阶段施压和多条街诈唬。\n\n【对抗场景】\n你手持【Q♥ Q♠】在 UTG 加注，LAG 对手在 CO 位 3Bet 到 9BB。你跟注。翻牌面 J♣ 8♦ 5♠，你过牌，LAG 下注 2/3 底池。你跟注。\n\n转牌发出 3♣，你再次过牌。LAG 再次开枪，这次下注几乎是底池大小。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "弃牌 (Fold) 避免复杂局面"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "最小加注试图看河牌"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "跟注 (Call)，用强牌让他继续诈唬"
+        },
+        {
+          "id": "d",
+          "label": "D",
+          "value": "全下 (All-in) 反击"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    },
+    {
+      "index": 97,
+      "type": "outs",
+      "difficulty": "medium",
+      "question": "你有多少张补牌？",
+      "situation": "2人桌翻牌圈，你在 HJ 位置，筹码 150BB。底池 5BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "2 张"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "5 张"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "4 张"
+        }
+      ],
+      "correctOptionId": "b",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "b",
+        "isCorrect": true,
+        "strategy": "formula_outs"
+      }
+    },
+    {
+      "index": 98,
+      "type": "equity",
+      "difficulty": "medium",
+      "question": "在6人桌中，你的胜率大约在哪个范围？",
+      "situation": "6人桌翻牌圈，你在 BB 位置，筹码 100BB。底池 10BB。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "30%~40%"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "50%~60%"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "10%~20%"
+        }
+      ],
+      "correctOptionId": "c",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "c",
+        "isCorrect": true,
+        "strategy": "formula_equity"
+      }
+    },
+    {
+      "index": 99,
+      "type": "odds",
+      "difficulty": "hard",
+      "question": "在暂不考虑隐含赔率的前提下，你此次跟注的直接底池赔率比值是多少？",
+      "situation": "6人桌，你的绝对位置是 MP。到达转牌圈，底池刚好凑满 15BB，遭遇某对手主动下注 8BB。\n\n你的牌型是【一对A + 卡顺听牌】（听 4 张补牌：卡顺听牌）。",
+      "options": [
+        {
+          "id": "a",
+          "label": "A",
+          "value": "2.9 : 1"
+        },
+        {
+          "id": "b",
+          "label": "B",
+          "value": "7.0 : 1"
+        },
+        {
+          "id": "c",
+          "label": "C",
+          "value": "10.0 : 1"
+        }
+      ],
+      "correctOptionId": "a",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "a",
+        "isCorrect": true,
+        "strategy": "formula_odds"
+      }
+    },
+    {
+      "index": 100,
+      "type": "preflop",
+      "difficulty": "easy",
+      "question": "你目前的最佳行动是？",
+      "situation": "9人桌翻前，你在 BTN 位置，筹码 40BB。\n\n局面上，前位有玩家率先加注到 3BB，其他人弃牌，现在轮到你行动。",
+      "options": [
+        {
+          "id": "all-in / 全下",
+          "label": "A",
+          "value": "All-in / 全下"
+        },
+        {
+          "id": "raise / 加注",
+          "label": "B",
+          "value": "Raise / 加注"
+        },
+        {
+          "id": "fold / 弃牌",
+          "label": "C",
+          "value": "Fold / 弃牌"
+        },
+        {
+          "id": "3-bet / 反加",
+          "label": "D",
+          "value": "3-Bet / 反加"
+        }
+      ],
+      "correctOptionId": "fold / 弃牌",
+      "setterReview": {
+        "score": 100,
+        "issues": []
+      },
+      "answererResult": {
+        "selectedOptionId": "fold / 弃牌",
+        "isCorrect": true,
+        "strategy": "random_fallback"
+      }
+    }
+  ]
+}

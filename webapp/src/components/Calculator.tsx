@@ -33,6 +33,7 @@ export const Calculator: React.FC<CalculatorProps> = ({ onBack }) => {
   const [selectedSuit, setSelectedSuit] = useState<Suit>('spades');
   const [showHelpToast, setShowHelpToast] = useState(false);
   const [isCalculating, setIsCalculating] = useState(false);
+  const [calcError, setCalcError] = useState<string | null>(null);
   const [hasCalculated, setHasCalculated] = useState(false);
   const [boardChanged, setBoardChanged] = useState(false);
   const [showGuide, setShowGuide] = useState(true);
@@ -62,6 +63,7 @@ export const Calculator: React.FC<CalculatorProps> = ({ onBack }) => {
     if (!canCalculate) return;
     
     setIsCalculating(true);
+    setCalcError(null);
     
     try {
       const validHand = hand.filter(c => c !== null) as Card[];
@@ -76,21 +78,10 @@ export const Calculator: React.FC<CalculatorProps> = ({ onBack }) => {
       setResults(result);
       setHasCalculated(true);
       setBoardChanged(false);
-    } catch (err) {
-      console.warn('API calculation failed, using fallback:', err);
-      // Fallback mock
-      setResults({
-        win: 67.3,
-        tie: 2.1,
-        loss: 30.6,
-        handName: 'A 高牌 + 同花听牌',
-        outs: 9,
-        outsType: '♥ 同花听牌',
-        turnHit: 19.1,
-        riverHit: 19.6,
-        totalHit: 35.0
-      });
-      setHasCalculated(true);
+    } catch (err: any) {
+      console.warn('API calculation failed:', err);
+      setCalcError('计算失败，请稍后重试');
+      setTimeout(() => setCalcError(null), 3000);
     } finally {
       setIsCalculating(false);
     }
@@ -349,7 +340,9 @@ export const Calculator: React.FC<CalculatorProps> = ({ onBack }) => {
                     <div className="w-5 h-5 border-2 border-[#0a0f12]/30 border-t-[#0a0f12] rounded-full animate-spin" />
                   ) : !canCalculate ? (
                     '放置公共牌与手牌'
-                  ) : (hasCalculated && boardChanged) ? (
+                  ) : !hasCalculated ? (
+                    '计算胜率'
+                  ) : boardChanged ? (
                     '重新计算胜率'
                   ) : (
                     '重新计算'
@@ -419,11 +412,11 @@ export const Calculator: React.FC<CalculatorProps> = ({ onBack }) => {
                     {results.outsCards && results.outsCards.length > 0 && (
                       <div className="flex flex-wrap gap-1.5 mt-0.5">
                         {results.outsCards.map((c, idx) => {
-                          const isRed = c.suit === 'hearts' || c.suit === 'diamonds';
+                          const suitColorMap: Record<string, string> = { spades: 'text-slate-900', hearts: 'text-red-500', diamonds: 'text-blue-500', clubs: 'text-green-600' };
                           const suitSymbol = { hearts: '♥️', diamonds: '♦️', clubs: '♣️', spades: '♠️' }[c.suit] || '♠️';
                           return (
                             <div key={idx} className="bg-[#f0f0f0] rounded border border-white/20 px-1.5 py-0.5 flex items-center shadow-sm">
-                              <span className={`text-[11px] font-bold font-headline leading-none ${isRed ? 'text-red-600' : 'text-slate-900'}`}>
+                              <span className={`text-[11px] font-bold font-headline leading-none ${suitColorMap[c.suit] || 'text-slate-900'}`}>
                                 {c.rank}
                               </span>
                               <span className="text-[10px] ml-[1px] leading-none">{suitSymbol}</span>
@@ -475,6 +468,16 @@ export const Calculator: React.FC<CalculatorProps> = ({ onBack }) => {
             className="fixed top-20 left-1/2 -translate-x-1/2 bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg shadow-lg z-50 text-sm font-medium border border-white/10"
           >
             点击空牌槽添加扑克牌，点击已有扑克牌可将其移除。
+          </motion.div>
+        )}
+        {calcError && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed top-20 left-1/2 -translate-x-1/2 bg-error/90 text-white px-5 py-2.5 rounded-xl shadow-lg z-50 text-sm font-bold border border-error/50"
+          >
+            ⚠️ {calcError}
           </motion.div>
         )}
       </AnimatePresence>

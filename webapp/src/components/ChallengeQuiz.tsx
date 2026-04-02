@@ -11,7 +11,7 @@ interface ChallengeQuizProps {
 }
 
 const TOTAL_QUESTIONS = 10;
-const TIME_PER_QUESTION = 15; // seconds
+const TIME_PER_QUESTION = 30; // seconds
 
 export const ChallengeQuiz: React.FC<ChallengeQuizProps> = ({ deviceId, onBack }) => {
   const [phase, setPhase] = useState<'loading' | 'playing' | 'result'>('loading');
@@ -25,6 +25,7 @@ export const ChallengeQuiz: React.FC<ChallengeQuizProps> = ({ deviceId, onBack }
   const questionStartTime = useRef(Date.now());
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [reviewIndex, setReviewIndex] = useState<number | null>(null);
+  const [showExitConfirm, setShowExitConfirm] = useState(false);
 
   // Load 10 questions
   useEffect(() => {
@@ -340,7 +341,7 @@ export const ChallengeQuiz: React.FC<ChallengeQuizProps> = ({ deviceId, onBack }
       <header className="bg-surface-dim/80 backdrop-blur-md fixed top-0 left-0 w-full z-50 border-b border-white/5">
         <div className="max-w-md mx-auto w-full flex items-center justify-between px-4 pt-[env(safe-area-inset-top)] h-[calc(4rem+env(safe-area-inset-top))]">
           <div className="flex items-center">
-            <button onClick={onBack} className="h-10 w-10 mr-2 flex items-center justify-center rounded-lg hover:bg-white/5 active:scale-95 transition-all text-on-surface-variant">
+            <button onClick={() => setShowExitConfirm(true)} className="h-10 w-10 mr-2 flex items-center justify-center rounded-lg hover:bg-white/5 active:scale-95 transition-all text-on-surface-variant">
               <ArrowLeft className="w-5 h-5" />
             </button>
             <h1 className="text-on-surface text-lg font-headline font-bold uppercase tracking-tight">每周挑战</h1>
@@ -528,6 +529,44 @@ export const ChallengeQuiz: React.FC<ChallengeQuizProps> = ({ deviceId, onBack }
           </div>
         </footer>
       )}
+
+      {/* Exit Confirmation Modal */}
+      <AnimatePresence>
+        {showExitConfirm && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowExitConfirm(false)}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[80]"
+            />
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] max-w-sm bg-surface-container-high rounded-2xl p-6 z-[90] border border-white/10 shadow-2xl"
+            >
+              <h3 className="text-on-surface font-headline font-bold text-lg mb-2">确认退出？</h3>
+              <p className="text-on-surface-variant text-sm mb-6 leading-relaxed">当前答题进度不会被保存，已完成的题目将不计入排行榜。</p>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setShowExitConfirm(false)}
+                  className="flex-1 h-12 rounded-xl bg-surface-container border border-white/10 text-on-surface font-headline font-bold uppercase tracking-wider text-sm hover:bg-surface-container-highest active:scale-[0.97] transition-all"
+                >
+                  继续答题
+                </button>
+                <button
+                  onClick={onBack}
+                  className="flex-1 h-12 rounded-xl bg-error/20 border border-error/30 text-error font-headline font-bold uppercase tracking-wider text-sm hover:bg-error/30 active:scale-[0.97] transition-all"
+                >
+                  确认退出
+                </button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, CheckCircle, HelpCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 import { PokerCard } from './PokerCard';
 import { QuizQuestion } from '../types';
 
@@ -34,6 +35,7 @@ export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onBack }) => {
 
   const [selectedOptionId, setSelectedOptionId] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showExitConfirm, setShowExitConfirm] = useState(false);
 
   const handleConfirm = () => {
     if (selectedOptionId && !isSubmitting) {
@@ -52,7 +54,7 @@ export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onBack }) => {
         <div className="max-w-md mx-auto w-full flex items-center justify-between px-4 pt-[env(safe-area-inset-top)] h-[calc(4rem+env(safe-area-inset-top))]">
           <div className="flex items-center overflow-hidden">
             <button 
-              onClick={onBack}
+              onClick={() => setShowExitConfirm(true)}
               disabled={isSubmitting}
               className="p-2 mr-2 text-on-surface hover:bg-white/5 rounded-full disabled:opacity-50"
             >
@@ -169,6 +171,44 @@ export const Quiz: React.FC<QuizProps> = ({ question, onAnswer, onBack }) => {
           </button>
         </div>
       </footer>
+
+      {/* Exit Confirmation Modal */}
+      <AnimatePresence>
+        {showExitConfirm && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setShowExitConfirm(false)}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[80]"
+            />
+            <motion.div
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[85%] max-w-sm bg-surface-container-high rounded-2xl p-6 z-[90] border border-white/10 shadow-2xl"
+            >
+              <h3 className="text-on-surface font-headline font-bold text-lg mb-2">确认退出？</h3>
+              <p className="text-on-surface-variant text-sm mb-6 leading-relaxed">当前题目进度不会被保存。</p>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setShowExitConfirm(false)}
+                  className="flex-1 h-12 rounded-xl bg-surface-container border border-white/10 text-on-surface font-headline font-bold uppercase tracking-wider text-sm hover:bg-surface-container-highest active:scale-[0.97] transition-all"
+                >
+                  继续答题
+                </button>
+                <button
+                  onClick={onBack}
+                  className="flex-1 h-12 rounded-xl bg-error/20 border border-error/30 text-error font-headline font-bold uppercase tracking-wider text-sm hover:bg-error/30 active:scale-[0.97] transition-all"
+                >
+                  确认退出
+                </button>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

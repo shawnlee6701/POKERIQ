@@ -31,7 +31,14 @@ export const PokerCard: React.FC<PokerCardProps> = ({ suit, rank, size = 'md', i
     );
   }
 
-  const isRed = suit === 'hearts' || suit === 'diamonds';
+  // 四色牌配色：与选牌盘 (Calculator) 保持一致
+  const suitColor: Record<string, string> = {
+    spades:   'text-slate-900',
+    hearts:   'text-red-500',
+    diamonds: 'text-blue-500',
+    clubs:    'text-green-600',
+  };
+  const colorClass = suitColor[suit || 'spades'];
   
   const SuitIcon = suit ? {
     hearts: Heart,
@@ -60,10 +67,10 @@ export const PokerCard: React.FC<PokerCardProps> = ({ suit, rank, size = 'md', i
 
   return (
     <div className={`relative bg-white rounded-lg shadow-md flex flex-col items-start justify-start poker-card-shadow transition-transform hover:scale-105 ${sizeClasses[size]} ${className}`}>
-      <div className={`font-headline font-bold leading-none ${rankSizeClasses[size]} ${isRed ? 'text-red-600' : 'text-slate-900'}`}>
+      <div className={`font-headline font-bold leading-none ${rankSizeClasses[size]} ${colorClass}`}>
         {rank}
       </div>
-      <SuitIcon className={`mt-1 fill-current ${iconSizeClasses[size]} ${isRed ? 'text-red-600' : 'text-slate-900'}`} />
+      <SuitIcon className={`mt-1 fill-current ${iconSizeClasses[size]} ${colorClass}`} />
       
       <div className="absolute bottom-1 right-1 opacity-10">
         <SuitIcon className={`fill-current ${size === 'lg' ? 'w-12 h-12' : 'w-8 h-8'}`} />

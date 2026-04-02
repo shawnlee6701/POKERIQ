@@ -193,14 +193,15 @@ export const Training: React.FC<TrainingProps> = ({ onStartQuiz, deviceId }) => 
 
               if (isCompleted) {
                 // 直接使用关卡原生记录的历史最后通关正确数（避免用全局 stats 混淆），且通过 Math.min 钳制防脏数据超限
-                const correct = ch.correct_questions || 0;
+                const correct = (ch as any).correct_questions || 0;
                 const total = ch.total_questions || 10;
                 const accuracy = Math.min(100, Math.round((correct / total) * 100));
 
                 return (
                   <div 
                     key={ch.chapter_id} 
-                    className="bg-[#0a0f12]/50 border border-success/20 p-5 rounded-2xl flex items-center justify-between group opacity-80 shadow-[0_4px_15px_rgba(70,241,197,0.05)] relative overflow-hidden"
+                    onClick={() => onStartQuiz(getChapterType(ch.chapter_id), 'learning', ch)}
+                    className="bg-[#0a0f12]/50 border border-success/20 p-5 rounded-2xl flex items-center justify-between group cursor-pointer opacity-80 shadow-[0_4px_15px_rgba(70,241,197,0.05)] relative overflow-hidden active:scale-[0.98] hover:opacity-100 transition-all"
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 bg-success/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none" />
                     <div className="flex flex-col gap-1 relative z-10">

@@ -42,7 +42,7 @@ export default function App() {
   const [deviceId, setDeviceId] = useState('');
   const [profile, setProfile] = useState<any>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [learningChapter, setLearningChapter] = useState<{ id: string; completed: number; correct: number; total: number } | null>(null);
+  const [learningChapter, setLearningChapter] = useState<{ id: string; name: string; completed: number; correct: number; total: number } | null>(null);
   const [chapterResultData, setChapterResultData] = useState<{ chapterId: string; chapterName: string; correct: number; total: number; isPassed: boolean } | null>(null);
   const [mistakeSession, setMistakeSession] = useState<{ current: number; total: number } | null>(null);
 
