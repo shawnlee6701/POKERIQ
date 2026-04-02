@@ -327,71 +327,92 @@ export default function App() {
         );
       case 'privacy':
         return (
-          <SecondaryPage title="隐私政策" onBack={() => setScreen('profile')}>
+          <SecondaryPage title="Privacy Policy" onBack={() => setScreen('profile')}>
             <div className="space-y-4 text-on-surface-variant text-sm leading-relaxed">
-              <p className="text-white/40 text-xs">最后更新：2026 年 4 月 2 日</p>
+              <p className="text-white/40 text-xs">Last updated: April 2, 2026</p>
+              <p>This Privacy Policy (the "Policy") applies to the collection, use and disclosure of personal data arising from the usage of the mobile application <strong>PokerIQ</strong> ("the App").</p>
 
-              <h3 className="text-on-surface font-bold mt-4">1. 概述</h3>
-              <p>PokerIQ（以下简称「我们」）致力于保护您的隐私。本隐私政策说明了我们在您使用 PokerIQ 应用程序时如何收集、使用、存储和保护您的信息。本应用为一款德州扑克概率学习与训练工具，不涉及任何形式的真实货币交易或在线博彩。</p>
+              <h3 className="text-on-surface font-bold mt-4">1. General</h3>
+              <p><strong>1.1</strong> This Policy provides information on the obligations and policies of PokerIQ in respect of personal data. PokerIQ undertakes to use reasonable efforts in applying, where practicable, the principles and processes set out herein to its operations.</p>
+              <p><strong>1.2</strong> By interacting with the App, you agree and consent to PokerIQ (collectively referred to as "we", "us" or "our") collecting, using, disclosing and sharing your Data in the manner set forth in this Policy.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">2. 我们收集的信息</h3>
-              <p><strong>2.1 设备标识符</strong>：我们为每台设备生成唯一的匿名标识符（UUID），用于标识您的学习进度。此标识符不与您的真实身份关联。</p>
-              <p><strong>2.2 学习数据</strong>：包括答题记录（正确率、用时）、章节进度、挑战成绩和错题记录。</p>
-              <p><strong>2.3 用户偏好</strong>：昵称、头像风格选择、语言偏好。</p>
-              <p><strong>2.4 我们不收集的信息</strong>：我们不收集您的姓名、电子邮件、电话号码、地理位置、通讯录、照片或其他个人身份信息。</p>
+              <h3 className="text-on-surface font-bold mt-4">2. Data Minimization</h3>
+              <p>PokerIQ strictly adheres to Apple's guidelines on Data Minimization. We consciously design our application to only collect information absolutely necessary for the functioning of the App.</p>
+              <p><strong>2.1 Types of Data Collected:</strong></p>
+              <p>• <strong>Anonymous Device Identifier (UUID):</strong> A randomly generated identifier used solely to associate your learning progress. This identifier cannot be used to determine your real identity.</p>
+              <p>• <strong>Learning Data:</strong> Quiz answers (accuracy, time spent), chapter progress, challenge scores and mistake records — stored on our cloud server to enable cross-session continuity.</p>
+              <p>• <strong>User Preferences:</strong> Nickname, avatar style selection, and language preference.</p>
+              <p><strong>2.2 Data we DO NOT collect:</strong> PokerIQ explicitly does NOT collect your name, email, phone number, geolocation, contacts, photos, financial information, or any other personally identifiable information.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">3. 信息的使用</h3>
-              <p>我们收集的数据仅用于：提供并改善学习体验；记录和展示学习进度；生成排行榜排名。</p>
+              <h3 className="text-on-surface font-bold mt-4">3. Purpose of Collection</h3>
+              <p>The operational data mentioned above is collected exclusively for: providing and improving the learning experience; recording and displaying your study progress; generating leaderboard rankings.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">4. 数据存储与安全</h3>
-              <p>您的数据存储在经过行业标准加密的云端数据库（Supabase）中。我们采取合理的技术和管理措施防止未经授权的访问、修改或删除。</p>
+              <h3 className="text-on-surface font-bold mt-4">4. Disclosure and Third-Party Services</h3>
+              <p>PokerIQ does not sell, trade, or otherwise transfer your data to unauthorized third parties. We rely on the following essential service providers:</p>
+              <p>• <strong>Supabase:</strong> An open-source backend platform used to securely store anonymous learning data with industry-standard encryption and row-level security policies.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">5. 第三方共享</h3>
-              <p>我们不会向任何第三方出售、出租或共享您的个人数据。排行榜中仅展示用户自行设置的昵称和成绩信息。</p>
+              <h3 className="text-on-surface font-bold mt-4">5. Account Deletion</h3>
+              <p>You may permanently delete all data associated with your device at any time via the in-app "Delete Account & Data" function located in the Profile section. Upon deletion, all records including quiz answers, progress, leaderboard entries and preferences are irrecoverably removed from our servers.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">6. 您的权利</h3>
-              <p>您有权随时通过应用内「我的 → 删除账号与数据」功能永久删除您存储在我们服务器上的所有数据。删除后数据不可恢复。</p>
+              <h3 className="text-on-surface font-bold mt-4">6. Children's Privacy</h3>
+              <p>This App is rated 17+ and is not directed at children under 17. We do not knowingly collect personal information from minors. If we become aware that we have inadvertently received data from a child, we will delete such information from our records.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">7. 儿童隐私</h3>
-              <p>本应用不面向 17 岁以下的儿童。我们不会故意收集未成年人的信息。</p>
+              <h3 className="text-on-surface font-bold mt-4">7. Educational Purpose Disclaimer</h3>
+              <p>PokerIQ is strictly an educational tool for learning poker mathematics and probability. It does not facilitate, encourage, or provide any form of real-money gambling, betting, or online gaming services.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">8. 联系我们</h3>
-              <p>如果您对本隐私政策有任何疑问，请联系我们：support@pokeriq.com</p>
+              <h3 className="text-on-surface font-bold mt-4">8. Changes to This Policy</h3>
+              <p>PokerIQ reserves the right to alter any clauses contained herein to remain compliant with App Store Guidelines and applicable legislation. Continued use of the App after revisions constitutes acceptance of the updated Policy.</p>
+
+              <h3 className="text-on-surface font-bold mt-4">9. Contact Us</h3>
+              <p>If you have any questions regarding your privacy, please contact: <strong>support@pokeriq.com</strong></p>
             </div>
           </SecondaryPage>
         );
       case 'agreement':
         return (
-          <SecondaryPage title="用户协议" onBack={() => setScreen('profile')}>
+          <SecondaryPage title="Terms and Conditions" onBack={() => setScreen('profile')}>
             <div className="space-y-4 text-on-surface-variant text-sm leading-relaxed">
-              <p className="text-white/40 text-xs">最后更新：2026 年 4 月 2 日</p>
+              <p className="text-white/40 text-xs">Last updated: April 2, 2026</p>
+              <p>Please read these Terms and Conditions carefully before using <strong>PokerIQ</strong> (the "App" or "Service"). By accessing or using our Service, you agree to be bound by these Terms and Conditions.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">1. 接受条款</h3>
-              <p>通过下载、安装或使用 PokerIQ 应用程序，您同意受本用户协议的约束。如果您不同意这些条款，请勿使用本应用。</p>
+              <h3 className="text-on-surface font-bold mt-4">1. Access and Registration</h3>
+              <p>PokerIQ provides access to poker mathematics training materials, including quiz-based learning paths, a probability calculator, and weekly challenge modes. Access is granted to the user operating the device associated with the anonymous identifier. No account registration is required to use the App.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">2. 服务说明</h3>
-              <p>PokerIQ 是一款德州扑克数学训练与学习工具，旨在通过选择题练习和概率计算帮助用户提升策略分析能力。本应用的所有内容均为教育与学习目的，不构成任何形式的投资建议、博彩服务或真实货币交易平台。</p>
+              <h3 className="text-on-surface font-bold mt-4">2. Educational Purpose</h3>
+              <p>PokerIQ is strictly an educational and training tool designed to help users improve their understanding of poker probability and strategy through practice questions and mathematical exercises. The App does NOT facilitate, encourage, or provide any form of real-money gambling, betting, wagering, or online gaming services. All scenarios presented are simulated for educational purposes only.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">3. 教育目的声明</h3>
-              <p>本应用提供的所有概率计算、策略建议和模拟场景仅供学习和参考。用户在实际牌局中的决策完全由其个人负责。我们不鼓励、不支持、也不提供任何形式的真实货币赌博或在线博彩服务。</p>
+              <h3 className="text-on-surface font-bold mt-4">3. Content Accuracy</h3>
+              <p>While we use reasonable efforts to include accurate probability calculations and strategic information, we make no warranties or representations as to the absolute accuracy of the Content. The App is an educational aide and we assume no liability for any decisions made based on information provided by the App.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">4. 用户行为规范</h3>
-              <p>您同意不会：将本应用用于任何违法目的；利用本应用从事真实货币赌博；尝试干扰或破坏本应用的正常运行；使用自动化工具操纵排行榜排名。</p>
+              <h3 className="text-on-surface font-bold mt-4">4. Intellectual Property Rights</h3>
+              <p>All information, content, services, questions, training frameworks, algorithms, and software displayed on or used in connection with PokerIQ is owned by its respective developers and is protected by applicable intellectual property laws and international treaty provisions.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">5. 知识产权</h3>
-              <p>本应用的所有内容，包括但不限于算法、界面设计、题目内容和品牌标识，均受知识产权法保护。未经我们明确书面授权，您不得复制、修改、分发或反向工程本应用。</p>
+              <h3 className="text-on-surface font-bold mt-4">5. Prohibition on Redistribution</h3>
+              <p>You may NOT copy, distribute, modify, reverse-engineer, decompile, or create derivative works from any part of the App, including its question banks, algorithms, or user interface designs, without express written permission.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">6. 免责声明</h3>
-              <p>本应用按「现状」提供，不作任何明示或暗示的担保。我们不保证应用不会发生中断或错误，也不保证计算结果的绝对准确性。在法律允许的最大范围内，我们不对因使用本应用而产生的任何直接或间接损失承担责任。</p>
+              <h3 className="text-on-surface font-bold mt-4">6. User Conduct</h3>
+              <p>You agree not to: use the Service for any unlawful purpose; attempt to gain unauthorized access to any part of the Service; use automated tools to manipulate leaderboard rankings; impersonate any person or entity.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">7. 账号与数据</h3>
-              <p>您可以随时通过应用内的「删除账号与数据」功能删除您的所有数据。删除操作不可撤销。</p>
+              <h3 className="text-on-surface font-bold mt-4">7. Warranty Disclaimer</h3>
+              <p>The Service is provided on an "AS-IS" and "AS-AVAILABLE" basis. No warranty is expressed or implied. The user agrees that PokerIQ, its staff, content providers, and affiliates shall have neither liability nor responsibility to any person or entity with respect to any loss or damages arising from the App.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">8. 条款修改</h3>
-              <p>我们保留随时修改本协议的权利。重大变更将通过应用内通知告知用户。继续使用本应用即视为接受修改后的条款。</p>
+              <h3 className="text-on-surface font-bold mt-4">8. Limitation of Liability</h3>
+              <p>To the maximum extent permitted by applicable law, PokerIQ and its affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your access to or use of or inability to access or use the Service.</p>
 
-              <h3 className="text-on-surface font-bold mt-4">9. 联系方式</h3>
-              <p>如有任何与本协议相关的问题，请联系 support@pokeriq.com。</p>
+              <h3 className="text-on-surface font-bold mt-4">9. Indemnification</h3>
+              <p>You agree to indemnify, defend, and hold harmless PokerIQ and its affiliates from and against any and all claims, damages, obligations, losses, liabilities, costs, or debt arising from your use of the Service or your violation of these Terms.</p>
+
+              <h3 className="text-on-surface font-bold mt-4">10. Account Deletion</h3>
+              <p>You may delete all data associated with your usage at any time via the in-app "Delete Account & Data" function. Deletion is permanent and irreversible.</p>
+
+              <h3 className="text-on-surface font-bold mt-4">11. Service Modifications</h3>
+              <p>PokerIQ may modify, suspend, discontinue or restrict the use of any portion of the App at any time, without notice or liability.</p>
+
+              <h3 className="text-on-surface font-bold mt-4">12. Changes to These Terms</h3>
+              <p>We reserve the right to modify these Terms at any time. By continuing to access or use the Service after revisions become effective, you agree to be bound by the revised terms.</p>
+
+              <h3 className="text-on-surface font-bold mt-4">13. Contact Us</h3>
+              <p>If you have any questions about these Terms, please contact: <strong>support@pokeriq.com</strong></p>
             </div>
           </SecondaryPage>
         );
