@@ -4,7 +4,6 @@
  */
 
 import { useState, useEffect, useRef, createContext, useContext } from 'react';
-import { App as CapApp } from '@capacitor/app';
 import { Screen, QuizQuestion } from './types';
 import { BottomNav } from './components/BottomNav';
 import { Calculator } from './components/Calculator';
@@ -48,16 +47,17 @@ export default function App() {
   const [mistakeSession, setMistakeSession] = useState<{ current: number; total: number } | null>(null);
   const appPausedAt = useRef<number | null>(null);
 
-  // Capacitor: listen for app state changes (fix timer drift on iOS)
+  // Web: listen for app state changes via visibility API
   useEffect(() => {
-    const listener = CapApp.addListener('appStateChange', ({ isActive }) => {
-      if (!isActive) {
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
         appPausedAt.current = Date.now();
       } else {
         appPausedAt.current = null;
       }
-    });
-    return () => { listener.then(l => l.remove()); };
+    };
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    return () => { document.removeEventListener('visibilitychange', handleVisibilityChange); };
   }, []);
 
   // 初始化：匿名登录
@@ -459,7 +459,7 @@ export default function App() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-surface-dim flex flex-col items-center justify-center relative overflow-hidden">
+      <div className="min-h-[100dvh] bg-surface-dim flex flex-col items-center justify-center relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/10 rounded-full blur-[80px]" />
         
         <div className="text-center relative z-10 flex flex-col items-center">
@@ -497,7 +497,7 @@ export default function App() {
 
   return (
     <AuthContext.Provider value={{ deviceId, profile, refreshProfile }}>
-      <div className="min-h-screen bg-surface-dim text-on-surface overflow-x-hidden">
+      <div className="min-h-[100dvh] bg-surface-dim text-on-surface overflow-x-hidden">
         <AnimatePresence mode="wait">
           <motion.div
             key={screen}

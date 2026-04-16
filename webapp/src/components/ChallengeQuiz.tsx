@@ -143,7 +143,7 @@ export const ChallengeQuiz: React.FC<ChallengeQuizProps> = ({ deviceId, onBack }
   // ── Loading ──
   if (phase === 'loading') {
     return (
-      <div className="flex flex-col h-screen items-center justify-center gap-4">
+      <div className="flex flex-col h-[100dvh] items-center justify-center gap-4">
         <div className="w-10 h-10 border-3 border-primary/30 border-t-primary rounded-full animate-spin" />
         <p className="text-on-surface-variant text-sm font-headline">加载挑战题目...</p>
       </div>
@@ -157,7 +157,7 @@ export const ChallengeQuiz: React.FC<ChallengeQuizProps> = ({ deviceId, onBack }
     const avgTime = (totalTimeSpent / TOTAL_QUESTIONS).toFixed(1);
     
     return (
-      <div className="flex flex-col min-h-screen">
+      <div className="flex flex-col min-h-[100dvh]">
         <header className="bg-surface-dim/80 backdrop-blur-md fixed top-0 left-0 w-full z-50 border-b border-white/5">
           <div className="max-w-md mx-auto w-full flex items-center px-4 pt-[env(safe-area-inset-top)] h-[calc(4rem+env(safe-area-inset-top))]">
             <button onClick={onBack} className="p-2 mr-2 text-on-surface hover:bg-white/5 rounded-full">
@@ -336,7 +336,7 @@ export const ChallengeQuiz: React.FC<ChallengeQuizProps> = ({ deviceId, onBack }
   const isTimeWarning = timeLeft <= 5;
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-[100dvh]">
       {/* Header */}
       <header className="bg-surface-dim/80 backdrop-blur-md fixed top-0 left-0 w-full z-50 border-b border-white/5">
         <div className="max-w-md mx-auto w-full flex items-center justify-between px-4 pt-[env(safe-area-inset-top)] h-[calc(4rem+env(safe-area-inset-top))]">
