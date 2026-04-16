@@ -3,6 +3,12 @@ import { supabaseAdmin } from '../supabase.js';
 
 export const profileRouter = Router();
 
+// [Security M3] UUID 格式校验工具
+const UUID_REGEX = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+function isValidDeviceId(id: string): boolean {
+  return UUID_REGEX.test(id) || /^local_\d+$/.test(id); // 兼容本地模式的 local_xxx 格式
+}
+
 /**
  * GET /api/profile?deviceId=xxx
  */
@@ -10,6 +16,7 @@ profileRouter.get('/', async (req, res) => {
   try {
     const deviceId = req.query.deviceId as string;
     if (!deviceId) return res.status(400).json({ error: 'deviceId required' });
+    if (!isValidDeviceId(deviceId)) return res.status(400).json({ error: 'Invalid deviceId' });
 
     const { data, error } = await supabaseAdmin
       .from('profiles')
@@ -20,7 +27,8 @@ profileRouter.get('/', async (req, res) => {
     if (error) throw error;
     return res.json(data);
   } catch (err: any) {
-    return res.status(500).json({ error: err.message });
+    console.error('Profile GET error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
   }
 });
 
@@ -32,9 +40,23 @@ profileRouter.put('/', async (req, res) => {
   try {
     const { deviceId, nickname, avatarStyle, language } = req.body;
     if (!deviceId) return res.status(400).json({ error: 'deviceId required' });
+    if (!isValidDeviceId(deviceId)) return res.status(400).json({ error: 'Invalid deviceId' });
+
+    // [Security C1] 昵称长度与字符过滤
+    if (nickname !== undefined) {
+      if (typeof nickname !== 'string') return res.status(400).json({ error: 'Invalid nickname' });
+      const trimmed = nickname.trim();
+      if (trimmed.length < 1 || trimmed.length > 20) {
+        return res.status(400).json({ error: 'Nickname must be 1-20 characters' });
+      }
+      // 仅允许字母、数字、中文、下划线、连字符
+      if (!/^[\w\u4e00-\u9fa5\-]+$/.test(trimmed)) {
+        return res.status(400).json({ error: 'Nickname contains invalid characters' });
+      }
+    }
 
     const updates: any = { updated_at: new Date().toISOString() };
-    if (nickname !== undefined) updates.nickname = nickname;
+    if (nickname !== undefined) updates.nickname = nickname.trim();
     if (avatarStyle !== undefined) updates.avatar_style = avatarStyle;
     if (language !== undefined) updates.language = language;
 
@@ -48,7 +70,8 @@ profileRouter.put('/', async (req, res) => {
     if (error) throw error;
     return res.json(data);
   } catch (err: any) {
-    return res.status(500).json({ error: err.message });
+    console.error('Profile PUT error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
   }
 });
 

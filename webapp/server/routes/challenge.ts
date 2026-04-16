@@ -128,15 +128,42 @@ challengeRouter.post('/submit', async (req, res) => {
     const { deviceId, correctCount, totalCount = 10, timeSpentSeconds } = req.body;
     if (!deviceId) return res.status(400).json({ error: 'deviceId required' });
 
+    // [Security C2] 服务端强校验数据合法范围，防止刷分
+    const count = Number(correctCount);
+    const total = Number(totalCount);
+    const time = Number(timeSpentSeconds);
+    if (!Number.isInteger(count) || count < 0 || count > 10) {
+      return res.status(400).json({ error: 'Invalid correctCount' });
+    }
+    if (!Number.isInteger(total) || total < 1 || total > 10) {
+      return res.status(400).json({ error: 'Invalid totalCount' });
+    }
+    if (!Number.isFinite(time) || time < 1 || time > 600) {
+      return res.status(400).json({ error: 'Invalid timeSpentSeconds' });
+    }
+
+    // [Security L2] 服务端强制执行每日提交限制（上限10次）
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const { count: todayCount } = await supabaseAdmin
+      .from('challenge_results')
+      .select('*', { count: 'exact', head: true })
+      .eq('device_id', deviceId)
+      .gte('created_at', today.toISOString());
+
+    if ((todayCount || 0) >= 10) {
+      return res.status(429).json({ error: 'Daily challenge limit reached' });
+    }
+
     const currentWeek = getCurrentWeek();
 
     const { data, error } = await supabaseAdmin
       .from('challenge_results')
       .insert({
         device_id: deviceId,
-        correct_count: correctCount,
-        total_count: totalCount,
-        time_spent_seconds: timeSpentSeconds,
+        correct_count: count,
+        total_count: total,
+        time_spent_seconds: time,
         challenge_week: currentWeek,
       })
       .select()
@@ -145,7 +172,8 @@ challengeRouter.post('/submit', async (req, res) => {
     if (error) throw error;
     return res.json(data);
   } catch (err: any) {
-    return res.status(500).json({ error: err.message });
+    console.error('Challenge submit error:', err);
+    return res.status(500).json({ error: 'Internal server error' });
   }
 });
 
