@@ -17,7 +17,7 @@ PokerIQ strictly adheres to Apple's guidelines on Data Minimization. We consciou
 ### 2.1 Types of Data Collected
 
 - **Anonymous Device Identifier (UUID):** A randomly generated identifier used solely to associate your learning progress. This identifier cannot be used to determine your real identity.
-- **Learning Data:** Quiz answers (accuracy, time spent), chapter progress, challenge scores and mistake records — stored on our cloud server to enable cross-session continuity.
+- **Learning Data:** Quiz answers (accuracy, time spent), chapter progress, challenge scores and mistake records — stored locally in your browser for this demo version.
 - **User Preferences:** Nickname, avatar style selection, and language preference.
 
 ### 2.2 Data We DO NOT Collect
@@ -36,13 +36,13 @@ The operational data mentioned above is collected exclusively for:
 
 PokerIQ does not sell, trade, or otherwise transfer your data to unauthorized third parties. We rely on the following essential service providers:
 
-- **Supabase:** An open-source backend platform used to securely store anonymous learning data with industry-standard encryption and row-level security policies.
+- **Local Browser Storage:** This demo version stores learning data on the current device only and does not use a cloud database.
 
 We may also disclose data if legally requested by regulators and law enforcement officials, to the extent required by law.
 
 ## 5. Account Deletion
 
-You may permanently delete all data associated with your device at any time via the in-app "Delete Account & Data" function located in the Profile section. Upon deletion, all records including quiz answers, progress, leaderboard entries and preferences are irrecoverably removed from our servers.
+You may permanently delete all data associated with your device at any time via the in-app "Delete Account & Data" function located in the Profile section. Upon deletion, all local demo records including quiz answers, progress, leaderboard entries and preferences are removed from this browser.
 
 ## 6. Children's Privacy
 

@@ -8,12 +8,13 @@ import * as api from '../lib/api';
 interface ChallengeQuizProps {
   deviceId: string;
   onBack: () => void;
+  onFirstAnswer?: () => void;
 }
 
 const TOTAL_QUESTIONS = 10;
 const TIME_PER_QUESTION = 30; // seconds
 
-export const ChallengeQuiz: React.FC<ChallengeQuizProps> = ({ deviceId, onBack }) => {
+export const ChallengeQuiz: React.FC<ChallengeQuizProps> = ({ deviceId, onBack, onFirstAnswer }) => {
   const [phase, setPhase] = useState<'loading' | 'playing' | 'result'>('loading');
   const [questions, setQuestions] = useState<QuizQuestion[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -123,8 +124,9 @@ export const ChallengeQuiz: React.FC<ChallengeQuizProps> = ({ deviceId, onBack }
       const spent = allResults.reduce((s, r) => s + r.timeTaken, 0);
       setTotalTimeSpent(Math.round(spent));
       setPhase('result');
+      onFirstAnswer?.();
       
-      // Submit to backend
+      // Save to local demo leaderboard.
       const correctCount = allResults.filter(r => r.correct).length;
       api.submitChallenge({
         deviceId,

@@ -12,8 +12,8 @@ export type Screen = 'calculator' | 'training' | 'challenge' | 'challenge-quiz' 
 
 export interface QuizQuestion {
   id: string;
-  /** 题目类型：补牌计算 / 赔率计算 / 胜率判断 / 翻前策略 */
-  type: 'outs' | 'odds' | 'equity' | 'preflop';
+  /** 题目类型 */
+  type: 'outs' | 'odds' | 'equity' | 'preflop' | 'position' | 'ev' | 'bluff' | 'style';
   /** 难度等级 */
   difficulty: 'easy' | 'medium' | 'hard';
   /** 章节名 (用于学习路径) */

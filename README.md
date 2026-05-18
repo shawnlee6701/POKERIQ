@@ -31,8 +31,8 @@
 - 🧮 **[胜率沙盘] 所见即所得的计算器**
   复盘实录工具。拖拽选择底牌与公牌，引擎毫秒级反馈真实的 Outs（出路）数量、中牌概率及底池赔率。
 
-- 🤖 **[AI 错题引擎] 你的私人量化教练**
-  自动捕获失误决策，接入 Google Gemini 深度诊断并生成专属错题集，直至完全掌握。
+- 📌 **[本机错题本] 你的私人量化教练**
+  自动捕获失误决策，在当前浏览器生成专属错题集，直至完全掌握。
 
 <br />
 
@@ -41,8 +41,8 @@
 保持极致轻量、高效与现代。
 
 *   **界面层 (Frontend)** — React 19, TypeScript, Tailwind CSS 4, Framer Motion
-*   **计算芯 (Backend)** — Express Node.js, 手写高性能概率引擎
-*   **数据仓 (Database)** — Supabase (Postgres), Vercel Serverless
+*   **计算芯 (Frontend Engine)** — 题目生成与概率计算直接在浏览器内运行
+*   **演示数据 (Local Demo State)** — 个人资料、学习进度、错题与排行榜写入 `localStorage`
 
 <br />
 
@@ -57,17 +57,11 @@ cd POKERIQ/webapp
 npm install
 ```
 
-**2. 注入环境变量**
-```bash
-cp .env.example .env
-```
-*(请在 `.env` 中补齐您的 Supabase 及 Gemini 凭证)*
-
-**3. 点火起飞**
+**2. 点火起飞**
 ```bash
 npm run dev
 ```
-前端门户部署于 `http://localhost:3000`，后端引擎巡航于 `http://localhost:3001`。
+演示项目部署于 `http://localhost:3000`，无需 Supabase、后端服务或环境变量。
 
 <br />
 
@@ -77,11 +71,10 @@ npm run dev
 webapp/
 ├── src/
 │   ├── components/    # 视觉组件 (挑战窗, 计算器, 全局图表)
-│   ├── lib/           # 对外通讯 (API Client)
+│   ├── lib/           # 前端演示数据层 (localStorage)
 │   └── types.ts       # 全局业务类型
 └── server/
-    ├── engine/        # 德州核心发牌与算率引擎
-    └── routes/        # 网关路由分配
+    └── engine/        # 德州核心发牌与算率引擎（由前端直接复用）
 ```
 
 <br />

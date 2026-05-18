@@ -96,21 +96,16 @@ export const Profile: React.FC<ProfileProps> = ({ onNavigate, deviceId }) => {
     if (id === 'agreement') onNavigate('agreement');
   };
 
-  const handleCopyEmail = (email: string) => {
-    navigator.clipboard.writeText(email);
+  const handleCopyEmail = (email?: string) => {
+    const fallbackEmail = `User_${deviceId?.slice(-4) ?? '----'}@pokeriq.app`;
+    navigator.clipboard.writeText(email || fallbackEmail);
     setCopySuccess(true);
     setTimeout(() => setCopySuccess(false), 2000);
   };
 
   return (
     <div className="flex flex-col min-h-[100dvh] bg-[#0a0f12] text-white">
-      <header className="bg-[#0a0f12]/80 backdrop-blur-xl border-b border-white/5 fixed top-0 left-0 w-full z-50">
-        <div className="max-w-md mx-auto w-full flex justify-between items-center px-6 pt-[env(safe-area-inset-top)] h-[calc(4rem+env(safe-area-inset-top))]">
-          <h1 className="text-xl font-headline font-black uppercase tracking-widest text-white/90">Poker<span className="text-primary">IQ</span></h1>
-        </div>
-      </header>
-
-      <main className="mt-[calc(4.5rem+env(safe-area-inset-top))] space-y-5 w-full px-4">
+      <main className="space-y-5 w-full px-4 pt-4">
         {/* Profile Header */}
         <header className="flex items-center gap-4 relative bg-[#0a0f12]/40 backdrop-blur-xl rounded-[2rem] p-5 border border-white/5 shadow-[0_8px_30px_rgba(0,0,0,0.5)]">
           <div className="absolute top-1/2 left-5 -translate-y-1/2 w-24 h-24 bg-primary/10 rounded-full blur-[30px] pointer-events-none" />
@@ -179,6 +174,17 @@ export const Profile: React.FC<ProfileProps> = ({ onNavigate, deviceId }) => {
             )}
           </div>
         </header>
+
+        {/* Demo mode notice */}
+        <div className="w-full flex items-center gap-4 p-4 rounded-[1.5rem] bg-gradient-to-r from-primary/8 to-primary/4 border border-primary/20 shadow-[0_4px_20px_rgba(70,241,197,0.05)]">
+          <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 text-primary">
+            <Shield className="w-5 h-5" />
+          </div>
+          <div className="flex-1 text-left">
+            <p className="text-white font-bold text-sm leading-tight">演示模式</p>
+            <p className="text-white/40 text-[11px] mt-0.5">进度、错题、排行榜仅保存在当前浏览器</p>
+          </div>
+        </div>
 
         {/* Avatar Selection Modal */}
         <AnimatePresence>

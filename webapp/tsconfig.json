@@ -22,5 +22,11 @@
     },
     "allowImportingTsExtensions": true,
     "noEmit": true
-  }
+  },
+  "exclude": [
+    "server/index.ts",
+    "server/routes",
+    "server/supabase.ts",
+    "supabase"
+  ]
 }

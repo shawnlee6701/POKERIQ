@@ -5,7 +5,7 @@
 
 import { useState, useEffect, useRef, createContext, useContext } from 'react';
 import { Screen, QuizQuestion } from './types';
-import { BottomNav } from './components/BottomNav';
+import { TopNav } from './components/TopNav';
 import { Calculator } from './components/Calculator';
 import { Training } from './components/Training';
 import { Challenge } from './components/Challenge';
@@ -86,6 +86,13 @@ export default function App() {
     }
     init();
   }, []);
+
+  // ── 首次答题后记录本机演示状态 ──
+  const FIRST_ANSWER_KEY = 'pokeriq_first_answered';
+  const handleFirstAnswer = () => {
+    if (localStorage.getItem(FIRST_ANSWER_KEY)) return;
+    localStorage.setItem(FIRST_ANSWER_KEY, '1');
+  };
 
   const refreshProfile = async () => {
     if (!deviceId) return;
@@ -224,6 +231,7 @@ export default function App() {
   // 提交答案
   const handleAnswer = async (optionId: string) => {
     setSelectedOptionId(optionId);
+    handleFirstAnswer();
     
     // 先跳转到Feedback页避免按钮无响应的延迟感
     setScreen('feedback');
@@ -297,7 +305,7 @@ export default function App() {
       case 'challenge':
         return <Challenge onStartChallenge={() => setScreen('challenge-quiz')} />;
       case 'challenge-quiz':
-        return <ChallengeQuiz deviceId={deviceId} onBack={() => {
+        return <ChallengeQuiz deviceId={deviceId} onFirstAnswer={handleFirstAnswer} onBack={() => {
           if (window.confirm('确认退出？当前挑战进度不予保存。')) {
             setScreen('challenge');
           }
@@ -340,7 +348,7 @@ export default function App() {
               <p>PokerIQ strictly adheres to Apple's guidelines on Data Minimization. We consciously design our application to only collect information absolutely necessary for the functioning of the App.</p>
               <p><strong>2.1 Types of Data Collected:</strong></p>
               <p>• <strong>Anonymous Device Identifier (UUID):</strong> A randomly generated identifier used solely to associate your learning progress. This identifier cannot be used to determine your real identity.</p>
-              <p>• <strong>Learning Data:</strong> Quiz answers (accuracy, time spent), chapter progress, challenge scores and mistake records — stored on our cloud server to enable cross-session continuity.</p>
+              <p>• <strong>Learning Data:</strong> Quiz answers (accuracy, time spent), chapter progress, challenge scores and mistake records — stored locally in your browser for this demo version.</p>
               <p>• <strong>User Preferences:</strong> Nickname, avatar style selection, and language preference.</p>
               <p><strong>2.2 Data we DO NOT collect:</strong> PokerIQ explicitly does NOT collect your name, email, phone number, geolocation, contacts, photos, financial information, or any other personally identifiable information.</p>
 
@@ -349,10 +357,10 @@ export default function App() {
 
               <h3 className="text-on-surface font-bold mt-4">4. Disclosure and Third-Party Services</h3>
               <p>PokerIQ does not sell, trade, or otherwise transfer your data to unauthorized third parties. We rely on the following essential service providers:</p>
-              <p>• <strong>Supabase:</strong> An open-source backend platform used to securely store anonymous learning data with industry-standard encryption and row-level security policies.</p>
+              <p>• <strong>Local Browser Storage:</strong> This demo version stores learning data on the current device only and does not use a cloud database.</p>
 
               <h3 className="text-on-surface font-bold mt-4">5. Account Deletion</h3>
-              <p>You may permanently delete all data associated with your device at any time via the in-app "Delete Account & Data" function located in the Profile section. Upon deletion, all records including quiz answers, progress, leaderboard entries and preferences are irrecoverably removed from our servers.</p>
+              <p>You may permanently delete all data associated with your device at any time via the in-app "Delete Account & Data" function located in the Profile section. Upon deletion, all local demo records including quiz answers, progress, leaderboard entries and preferences are removed from this browser.</p>
 
               <h3 className="text-on-surface font-bold mt-4">6. Children's Privacy</h3>
               <p>This App is rated 17+ and is not directed at children under 17. We do not knowingly collect personal information from minors. If we become aware that we have inadvertently received data from a child, we will delete such information from our records.</p>
@@ -455,7 +463,7 @@ export default function App() {
     }
   };
 
-  const showBottomNav = ['training', 'calculator', 'challenge', 'profile'].includes(screen);
+  const showTopNav = ['training', 'calculator', 'challenge', 'profile'].includes(screen);
 
   if (isLoading) {
     return (
@@ -505,16 +513,16 @@ export default function App() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -20 }}
             transition={{ duration: 0.3 }}
-            className={`max-w-md mx-auto px-4 ${showBottomNav ? 'pb-24' : 'pb-8'}`}
+            className={`max-w-md mx-auto px-4 ${showTopNav ? 'pt-[calc(3.5rem+env(safe-area-inset-top))]' : ''} pb-8`}
           >
             {renderScreen()}
           </motion.div>
         </AnimatePresence>
 
-        {showBottomNav && (
-          <BottomNav 
-            activeScreen={screen} 
-            onScreenChange={setScreen} 
+        {showTopNav && (
+          <TopNav
+            activeScreen={screen}
+            onScreenChange={setScreen}
           />
         )}
       </div>
